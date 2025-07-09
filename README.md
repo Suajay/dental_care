@@ -2,7 +2,7 @@
 
 A comprehensive dental practice management system built with modern web technologies and Supabase backend.
 
-![DentalCare Pro Overview](screenshots/overview.png "DentalCare Pro Homepage")
+![DentalCare Pro Overview](screenshots/1.png "DentalCare Pro Homepage")
 
 ## Features
 
@@ -15,7 +15,7 @@ A comprehensive dental practice management system built with modern web technolo
 - Online bill payment
 - Treatment plan progress tracking
 
-![Patient Portal Screenshot](screenshots/patient-portal.png "Patient Portal Interface")
+![Patient Portal Screenshot](screenshots/2.png "Patient Portal Interface")
 
 ### Staff Dashboard
 - Staff authentication and role management
@@ -27,7 +27,7 @@ A comprehensive dental practice management system built with modern web technolo
 - Inventory management
 - Communication tools
 
-![Staff Dashboard Screenshot](screenshots/staff-dashboard.png "Staff Dashboard Interface")
+![Staff Dashboard Screenshot](screenshots/3.png "Staff Dashboard Interface")
 
 ### Public Website
 - Modern, responsive design
