@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - DentalCare Pro | Advanced Care, Personal Touch</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdentalcare1896back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Emergency Care Banner -->
+    <div id="emergency-banner" class="bg-error text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-center gap-4">
+            <span>🚨 Dental Emergency? Call us now:</span>
+            <a href="tel:+1-555-DENTAL" class="font-bold underline hover:no-underline">(555) DENTAL-1</a>
+            <button onclick="document.getElementById('emergency-banner').style.display='none'" class="ml-4 text-white hover:text-gray-200">
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-gentle sticky top-8 z-40">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">DentalCare Pro</h1>
+                        <p class="text-xs text-text-secondary">Advanced Care, Personal Touch</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-primary font-semibold">About</a>
+                    <a href="book_appointment.html" class="btn-accent">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-surface">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-primary font-semibold">About</a>
+                    <a href="book_appointment.html" class="btn-accent inline-block text-center">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16 lg:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl lg:text-hero font-bold text-primary mb-6">
+                    Our Story of <span class="text-gradient-primary">Confident Care</span>
+                </h1>
+                <p class="text-xl text-text-secondary leading-relaxed mb-8">
+                    For over 15 years, DentalCare Pro has been the trusted choice for families seeking exceptional dental care. We combine cutting-edge technology with compassionate service to create an environment where dental care feels approachable, not intimidating.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="book_appointment.html" class="btn-accent">Schedule Your Visit</a>
+                    <a href="#virtual-tour" class="btn-secondary">Take Virtual Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Philosophy -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Our Practice Philosophy</h2>
+                    <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                        We believe that exceptional dental care begins with understanding each patient's unique needs, concerns, and goals
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Patient-Centered Care -->
+                    <div class="card text-center hover:shadow-floating transition-gentle">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Patient-Centered Care</h3>
+                        <p class="text-text-secondary">
+                            Every treatment plan is personalized to your specific needs, lifestyle, and comfort level. We take time to listen and understand your concerns.
+                        </p>
+                    </div>
+
+                    <!-- Transparency & Education -->
+                    <div class="card text-center hover:shadow-floating transition-gentle">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Transparency & Education</h3>
+                        <p class="text-text-secondary">
+                            We explain every procedure clearly, discuss all options, and ensure you're fully informed before making any treatment decisions.
+                        </p>
+                    </div>
+
+                    <!-- Comfort First -->
+                    <div class="card text-center hover:shadow-floating transition-gentle">
+                        <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Comfort First</h3>
+                        <p class="text-text-secondary">
+                            From our welcoming office environment to gentle treatment techniques, we prioritize your comfort at every step of your dental journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team -->
+    <section class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Meet Our Dental Team</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Our experienced professionals are dedicated to providing you with the highest quality dental care in a comfortable, welcoming environment
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto space-y-12">
+                <!-- Dr. Sarah Johnson -->
+                <div class="card-floating">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="text-center md:text-left">
+                            <div class="relative mx-auto md:mx-0 w-48 h-48 overflow-hidden rounded-2xl mb-4">
+                                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Sarah Johnson" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 space-y-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary">Dr. Sarah Johnson</h3>
+                                <p class="text-accent font-semibold text-lg">Lead Dentist & Practice Owner</p>
+                                <p class="text-text-secondary">DDS, University of Pennsylvania School of Dental Medicine</p>
+                            </div>
+                            <p class="text-text-secondary leading-relaxed">
+                                Dr. Johnson founded DentalCare Pro with a vision to transform the dental experience through compassionate care and advanced technology. With over 15 years of experience, she specializes in general and cosmetic dentistry, with a particular focus on patient comfort and anxiety management. She regularly attends continuing education courses to stay current with the latest dental techniques and technologies.
+                            </p>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-primary">Specializations:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-primary-100 text-primary text-sm rounded-full">General Dentistry</span>
+                                    <span class="px-3 py-1 bg-accent-100 text-accent text-sm rounded-full">Cosmetic Procedures</span>
+                                    <span class="px-3 py-1 bg-secondary-100 text-secondary text-sm rounded-full">Anxiety Management</span>
+                                    <span class="px-3 py-1 bg-success-100 text-success text-sm rounded-full">Preventive Care</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-primary">Professional Memberships:</h4>
+                                <ul class="text-text-secondary text-sm space-y-1">
+                                    <li>• American Dental Association (ADA)</li>
+                                    <li>• Academy of General Dentistry (AGD)</li>
+                                    <li>• American Academy of Cosmetic Dentistry</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Michael Chen -->
+                <div class="card-floating">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="text-center md:text-left">
+                            <div class="relative mx-auto md:mx-0 w-48 h-48 overflow-hidden rounded-2xl mb-4">
+                                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Michael Chen" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/07/14/17/32/doctor-6466701_1280.jpg'; this.onerror=null;" />
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 space-y-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary">Dr. Michael Chen</h3>
+                                <p class="text-accent font-semibold text-lg">Oral Surgeon & Implant Specialist</p>
+                                <p class="text-text-secondary">DDS, Harvard School of Dental Medicine | Oral Surgery Residency, Mass General</p>
+                            </div>
+                            <p class="text-text-secondary leading-relaxed">
+                                Dr. Chen brings exceptional expertise in oral surgery and dental implants to our practice. Known for his gentle technique and thorough patient education, he ensures that even complex procedures are comfortable and well-understood. His commitment to continuing education keeps him at the forefront of surgical innovations and minimally invasive techniques.
+                            </p>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-primary">Specializations:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-primary-100 text-primary text-sm rounded-full">Oral Surgery</span>
+                                    <span class="px-3 py-1 bg-secondary-100 text-secondary text-sm rounded-full">Dental Implants</span>
+                                    <span class="px-3 py-1 bg-accent-100 text-accent text-sm rounded-full">Wisdom Teeth</span>
+                                    <span class="px-3 py-1 bg-success-100 text-success text-sm rounded-full">Bone Grafting</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-primary">Professional Memberships:</h4>
+                                <ul class="text-text-secondary text-sm space-y-1">
+                                    <li>• American Association of Oral and Maxillofacial Surgeons</li>
+                                    <li>• International Congress of Oral Implantologists</li>
+                                    <li>• American Dental Association (ADA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lisa Rodriguez -->
+                <div class="card-floating">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="text-center md:text-left">
+                            <div class="relative mx-auto md:mx-0 w-48 h-48 overflow-hidden rounded-2xl mb-4">
+                                <img src="https://images.unsplash.com/photo-1594824475317-8b7b0c8c3b7b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Lisa Rodriguez" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 space-y-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-primary">Lisa Rodriguez</h3>
+                                <p class="text-accent font-semibold text-lg">Senior Dental Hygienist</p>
+                                <p class="text-text-secondary">RDH, Certified in Local Anesthesia Administration</p>
+                            </div>
+                            <p class="text-text-secondary leading-relaxed">
+                                Lisa has been an integral part of our team for over 10 years, bringing exceptional skill and genuine care to every patient interaction. Her expertise in preventive care and patient education helps our patients maintain optimal oral health between visits. She's passionate about making dental cleanings comfortable and informative experiences.
+                            </p>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-primary">Specializations:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-success-100 text-success text-sm rounded-full">Preventive Care</span>
+                                    <span class="px-3 py-1 bg-primary-100 text-primary text-sm rounded-full">Deep Cleanings</span>
+                                    <span class="px-3 py-1 bg-accent-100 text-accent text-sm rounded-full">Patient Education</span>
+                                    <span class="px-3 py-1 bg-secondary-100 text-secondary text-sm rounded-full">Periodontal Therapy</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-semibold text-primary">Certifications:</h4>
+                                <ul class="text-text-secondary text-sm space-y-1">
+                                    <li>• Registered Dental Hygienist (RDH)</li>
+                                    <li>• Local Anesthesia Administration</li>
+                                    <li>• CPR & First Aid Certified</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Office Tour -->
+    <section id="virtual-tour" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Virtual Office Tour</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Take a virtual walk through our modern, comfortable facility and see the advanced technology we use to provide exceptional care
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Reception Area -->
+                    <div class="card hover:shadow-floating transition-gentle">
+                        <div class="relative overflow-hidden rounded-lg mb-4">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Modern reception area with comfortable seating" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Welcoming Reception</h3>
+                        <p class="text-text-secondary text-sm">
+                            Our bright, comfortable reception area features natural lighting and modern amenities to help you feel at ease from the moment you arrive.
+                        </p>
+                    </div>
+
+                    <!-- Treatment Room -->
+                    <div class="card hover:shadow-floating transition-gentle">
+                        <div class="relative overflow-hidden rounded-lg mb-4">
+                            <img src="https://images.pexels.com/photos/6812589/pexels-photo-6812589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern treatment room with advanced equipment" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Advanced Treatment Rooms</h3>
+                        <p class="text-text-secondary text-sm">
+                            State-of-the-art treatment rooms equipped with digital X-ray systems, intraoral cameras, and comfortable patient chairs for optimal care.
+                        </p>
+                    </div>
+
+                    <!-- Sterilization Center -->
+                    <div class="card hover:shadow-floating transition-gentle">
+                        <div class="relative overflow-hidden rounded-lg mb-4">
+                            <img src="https://images.pixabay.com/photo/2021/08/18/15/44/dental-6556958_1280.jpg" alt="Professional sterilization center" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Sterilization Center</h3>
+                        <p class="text-text-secondary text-sm">
+                            Our dedicated sterilization center follows the highest standards for instrument cleaning and sterilization, ensuring your safety and peace of mind.
+                        </p>
+                    </div>
+
+                    <!-- Technology Hub -->
+                    <div class="card hover:shadow-floating transition-gentle">
+                        <div class="relative overflow-hidden rounded-lg mb-4">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Digital dental technology and equipment" class="w-full h-48 object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/6812542/pexels-photo-6812542.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Digital Technology</h3>
+                        <p class="text-text-secondary text-sm">
+                            Advanced digital imaging, laser dentistry equipment, and computer-aided treatment planning for precise, efficient care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology & Equipment -->
+    <section class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Advanced Technology</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    We invest in the latest dental technology to provide more accurate diagnoses, comfortable treatments, and better outcomes
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Digital X-Rays -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Digital X-Rays</h3>
+                    <p class="text-text-secondary text-sm">
+                        90% less radiation than traditional X-rays with instant, high-quality images for faster diagnosis and treatment planning.
+                    </p>
+                </div>
+
+                <!-- Intraoral Cameras -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Intraoral Cameras</h3>
+                    <p class="text-text-secondary text-sm">
+                        See what we see with high-definition cameras that show detailed images of your teeth and gums on chairside monitors.
+                    </p>
+                </div>
+
+                <!-- Laser Dentistry -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Laser Dentistry</h3>
+                    <p class="text-text-secondary text-sm">
+                        Minimally invasive laser treatments for gum disease, cavity preparation, and soft tissue procedures with faster healing.
+                    </p>
+                </div>
+
+                <!-- 3D Imaging -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">3D Imaging</h3>
+                    <p class="text-text-secondary text-sm">
+                        Comprehensive 3D scans for precise implant placement, orthodontic planning, and complex treatment procedures.
+                    </p>
+                </div>
+
+                <!-- CAD/CAM Technology -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">CAD/CAM Technology</h3>
+                    <p class="text-text-secondary text-sm">
+                        Same-day crowns and restorations designed and milled in our office using computer-aided design and manufacturing.
+                    </p>
+                </div>
+
+                <!-- Nitrous Oxide -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">Nitrous Oxide</h3>
+                    <p class="text-text-secondary text-sm">
+                        Safe, effective sedation option to help anxious patients feel relaxed and comfortable during dental procedures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Success Stories -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Patient Success Stories</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Real stories from real patients who have experienced the DentalCare Pro difference
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+                <!-- Success Story 1 -->
+                <div class="card-floating">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-bold text-lg">JM</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary">Jennifer Martinez</h3>
+                                <p class="text-text-secondary text-sm">Smile Makeover Patient</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-text-secondary italic">
+                            "I was so self-conscious about my smile for years. Dr. Johnson and her team completely transformed not just my teeth, but my confidence. The process was comfortable, and they explained everything clearly. I can't stop smiling now!"
+                        </blockquote>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-text-secondary text-sm ml-2">Cosmetic Dentistry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Story 2 -->
+                <div class="card-floating">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-bold text-lg">RT</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary">Robert Thompson</h3>
+                                <p class="text-text-secondary text-sm">Dental Implant Patient</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-text-secondary italic">
+                            "Dr. Chen's expertise with dental implants gave me back my ability to eat and speak confidently. The entire process was much more comfortable than I expected, and the results look and feel completely natural."
+                        </blockquote>
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-text-secondary text-sm ml-2">Oral Surgery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Involvement -->
+    <section class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Community Involvement</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    We're proud to give back to our community through various health initiatives and charitable programs
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <!-- School Programs -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">School Education Programs</h3>
+                    <p class="text-text-secondary">
+                        We visit local schools to teach children about proper oral hygiene and the importance of dental health through fun, interactive presentations.
+                    </p>
+                </div>
+
+                <!-- Free Dental Days -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Free Dental Days</h3>
+                    <p class="text-text-secondary">
+                        Annual community events providing free dental screenings and basic treatments for underserved families in our area.
+                    </p>
+                </div>
+
+                <!-- Senior Care -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.5 8H16c-.8 0-1.5.7-1.5 1.5v6c0 .8.7 1.5 1.5 1.5h1v5h2zm-12.5-2c.28 0 .5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5zm0-2c.28 0 .5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">Senior Care Outreach</h3>
+                    <p class="text-text-secondary">
+                        Mobile dental services for local nursing homes and assisted living facilities, ensuring seniors receive quality oral healthcare.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Awards & Recognition</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Our commitment to excellence has been recognized by professional organizations and our community
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Professional Awards -->
+                    <div class="card-floating">
+                        <h3 class="text-xl font-semibold text-primary mb-4">Professional Recognition</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Top Dentist Award 2024</p>
+                                    <p class="text-sm text-text-secondary">State Dental Association</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Excellence in Patient Care</p>
+                                    <p class="text-sm text-text-secondary">American Dental Association</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Innovation in Dental Technology</p>
+                                    <p class="text-sm text-text-secondary">Dental Technology Institute</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Community Awards -->
+                    <div class="card-floating">
+                        <h3 class="text-xl font-semibold text-primary mb-4">Community Recognition</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Best Healthcare Provider 2024</p>
+                                    <p class="text-sm text-text-secondary">City Business Awards</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Community Service Award</p>
+                                    <p class="text-sm text-text-secondary">Chamber of Commerce</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Patient Choice Award</p>
+                                    <p class="text-sm text-text-secondary">Local Health Network</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-br from-primary to-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Ready to Experience the DentalCare Pro Difference?</h2>
+                <p class="text-xl text-primary-100 mb-8">
+                    Join thousands of satisfied patients who trust us with their dental care. Schedule your appointment today and discover why we're the preferred choice for families in our community.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="book_appointment.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-gentle">
+                        Book Your Appointment
+                    </a>
+                    <a href="tel:+1-555-DENTAL" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-gentle">
+                        Call (555) DENTAL-1
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">DentalCare Pro</h3>
+                            <p class="text-sm text-primary-200">Advanced Care, Personal Touch</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Providing exceptional dental care with modern technology and compassionate service since 2010.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-primary-200 hover:text-white transition-gentle">Home</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Services</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-gentle">About</a></li>
+                        <li><a href="book_appointment.html" class="text-primary-200 hover:text-white transition-gentle">Book Appointment</a></li>
+                        <li><a href="patient_portal.html" class="text-primary-200 hover:text-white transition-gentle">Patient Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">General Dentistry</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Cosmetic Procedures</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Oral Surgery</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Emergency Care</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Preventive Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-primary-200">123 Dental Street, City, ST 12345</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <a href="tel:+1-555-DENTAL" class="text-primary-200 hover:text-white transition-gentle">(555) DENTAL-1</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <a href="mailto:info@dentalcarepro.com" class="text-primary-200 hover:text-white transition-gentle">info@dentalcarepro.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-600 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 DentalCare Pro. All Rights Reserved. | HIPAA Compliant | Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Expandable team bio functionality
+        document.querySelectorAll('.card-floating').forEach(card => {
+            card.addEventListener('click', function() {
+                // Add any expandable functionality here if needed
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

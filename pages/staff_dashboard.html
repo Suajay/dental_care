@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Dashboard - DentalCare Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdentalcare1896back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-surface text-text-primary">
+    <!-- Staff Login Modal (Initially Hidden) -->
+    <div id="staff-login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3 3m3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-primary mb-2">Staff Access</h2>
+                <p class="text-text-secondary">Enter your credentials to access the staff dashboard</p>
+            </div>
+
+            <form id="staff-login-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-text-primary mb-2">Email</label>
+                    <input type="email" id="staff-email" class="input-field" placeholder="Enter your email" required />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-text-primary mb-2">Password</label>
+                    <input type="password" id="staff-password" class="input-field" placeholder="Enter your password" required />
+                </div>
+                <button type="submit" class="btn-primary w-full">Access Dashboard</button>
+            </form>
+
+            <div class="mt-6 p-4 bg-primary-50 rounded-lg">
+                <h3 class="font-semibold text-primary mb-2">Demo Staff Credentials:</h3>
+                <div class="text-sm text-text-secondary space-y-1">
+                    <p><strong>Email:</strong> dr.johnson@dentalcarepro.com</p>
+                    <p><strong>Password:</strong> staff123</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-gentle sticky top-0 z-40">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">DentalCare Pro</h1>
+                        <p class="text-xs text-text-secondary">Staff Dashboard</p>
+                    </div>
+                </div>
+
+                <!-- User Info & Actions -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                            <span class="text-primary font-semibold text-sm" id="staff-initials">--</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-text-primary" id="staff-name">Staff Member</p>
+                            <p class="text-xs text-text-secondary" id="staff-role">Role</p>
+                        </div>
+                    </div>
+                    <button class="p-2 text-text-secondary hover:text-primary transition-gentle">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12h5v12z"/>
+                        </svg>
+                    </button>
+                    <button id="staff-logout-btn" class="btn-secondary text-sm">
+                        Exit Dashboard
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-gentle">
+            <div class="p-6">
+                <nav class="space-y-2">
+                    <a href="#dashboard" class="flex items-center space-x-3 px-4 py-3 bg-primary-50 text-primary rounded-lg font-medium">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#schedule" class="flex items-center space-x-3 px-4 py-3 text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Schedule</span>
+                    </a>
+                    <a href="#patients" class="flex items-center space-x-3 px-4 py-3 text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        <span>Patients</span>
+                    </a>
+                    <a href="#reports" class="flex items-center space-x-3 px-4 py-3 text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        <span>Reports</span>
+                    </a>
+                    <a href="#inventory" class="flex items-center space-x-3 px-4 py-3 text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                        <span>Inventory</span>
+                    </a>
+                    <a href="#communications" class="flex items-center space-x-3 px-4 py-3 text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                        <span>Communications</span>
+                    </a>
+                </nav>
+
+                <!-- Quick Actions -->
+                <div class="mt-8 pt-6 border-t border-surface">
+                    <h3 class="text-sm font-semibold text-text-primary mb-3">Quick Actions</h3>
+                    <div class="space-y-2">
+                        <button class="w-full text-left px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            Add New Patient
+                        </button>
+                        <button class="w-full text-left px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            Schedule Appointment
+                        </button>
+                        <button class="w-full text-left px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            Send Reminder
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Public Site Links -->
+                <div class="mt-6 pt-6 border-t border-surface">
+                    <h3 class="text-sm font-semibold text-text-primary mb-3">Public Site</h3>
+                    <div class="space-y-2">
+                        <a href="homepage.html" class="block px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            Homepage
+                        </a>
+                        <a href="services.html" class="block px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            Services
+                        </a>
+                        <a href="about.html" class="block px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            About
+                        </a>
+                        <a href="book_appointment.html" class="block px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            Book Appointment
+                        </a>
+                        <a href="patient_portal.html" class="block px-4 py-2 text-sm text-text-secondary hover:bg-surface hover:text-primary rounded-lg transition-gentle">
+                            Patient Portal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- Dashboard Overview -->
+            <div id="dashboard-content">
+                <!-- Header Stats -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-primary mb-6">Dashboard Overview</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Today's Appointments -->
+                        <div class="card">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-text-secondary">Today's Appointments</p>
+                                    <p class="text-2xl font-bold text-primary" id="todays-appointments">--</p>
+                                </div>
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Patients -->
+                        <div class="card">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-text-secondary">Active Patients</p>
+                                    <p class="text-2xl font-bold text-accent" id="active-patients">--</p>
+                                </div>
+                                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Treatments -->
+                        <div class="card">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-text-secondary">Pending Treatments</p>
+                                    <p class="text-2xl font-bold text-warning" id="pending-treatments">--</p>
+                                </div>
+                                <div class="w-12 h-12 bg-warning-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Revenue This Month -->
+                        <div class="card">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-text-secondary">Revenue This Month</p>
+                                    <p class="text-2xl font-bold text-success" id="monthly-revenue">--</p>
+                                </div>
+                                <div class="w-12 h-12 bg-success-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Schedule & Recent Activity -->
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Today's Schedule -->
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-primary">Today's Schedule</h3>
+                            <button class="text-sm text-accent hover:text-accent-600 transition-gentle">View Full Calendar</button>
+                        </div>
+                        <div id="todays-schedule" class="space-y-4">
+                            <div class="text-center py-8">
+                                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                <p class="text-text-secondary mt-2">Loading schedule...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-primary">Recent Activity</h3>
+                            <button class="text-sm text-accent hover:text-accent-600 transition-gentle">View All</button>
+                        </div>
+                        <div id="recent-activity" class="space-y-4">
+                            <div class="text-center py-8">
+                                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                <p class="text-text-secondary mt-2">Loading activity...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Patient Search -->
+                <div class="mt-8">
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-primary mb-4">Quick Patient Search</h3>
+                        <div class="flex space-x-4">
+                            <div class="flex-1">
+                                <input type="text" id="patient-search" placeholder="Search by name, phone, or email..." class="input-field" />
+                            </div>
+                            <button id="search-btn" class="btn-primary">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                                Search
+                            </button>
+                        </div>
+                        
+                        <!-- Search Results -->
+                        <div id="search-results" class="mt-4 hidden">
+                            <div class="space-y-2">
+                                <!-- Search results will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Analytics -->
+                <div class="mt-8">
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-primary mb-6">Practice Performance</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <!-- Patient Retention -->
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-success">94%</p>
+                                <p class="text-sm text-text-secondary">Patient Retention</p>
+                            </div>
+
+                            <!-- Treatment Acceptance -->
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-primary">87%</p>
+                                <p class="text-sm text-text-secondary">Treatment Acceptance</p>
+                            </div>
+
+                            <!-- Average Rating -->
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-accent">4.9</p>
+                                <p class="text-sm text-text-secondary">Average Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { authManager } from '../js/auth-manager.js'
+        import { staffService } from '../js/staff-service.js'
+        import { appointmentService } from '../js/appointment-service.js'
+        import { patientService } from '../js/patient-service.js'
+
+        let currentUser = null
+        let currentStaff = null
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', async () => {
+            await authManager.init()
+            setupEventListeners()
+            checkAuthState()
+        })
+
+        // Check authentication state
+        function checkAuthState() {
+            currentUser = authManager.getCurrentUser()
+            if (currentUser && authManager.isStaff()) {
+                hideLoginModal()
+                loadStaffData()
+            } else {
+                showLoginModal()
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Staff login form
+            document.getElementById('staff-login-form').addEventListener('submit', handleStaffLogin)
+
+            // Staff logout
+            document.getElementById('staff-logout-btn').addEventListener('click', handleLogout)
+
+            // Patient search
+            document.getElementById('search-btn').addEventListener('click', handlePatientSearch)
+            document.getElementById('patient-search').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handlePatientSearch()
+                }
+            })
+
+            // Sidebar navigation
+            document.querySelectorAll('aside nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault()
+                    
+                    // Remove active class from all links
+                    document.querySelectorAll('aside nav a').forEach(l => {
+                        l.classList.remove('bg-primary-50', 'text-primary', 'font-medium')
+                        l.classList.add('text-text-secondary')
+                    })
+                    
+                    // Add active class to clicked link
+                    this.classList.add('bg-primary-50', 'text-primary', 'font-medium')
+                    this.classList.remove('text-text-secondary')
+                    
+                    // Show corresponding content
+                    const target = this.getAttribute('href').substring(1)
+                    showNotification(`${target} section coming soon!`, 'info')
+                })
+            })
+
+            // Listen for auth state changes
+            window.addEventListener('authStateChanged', (event) => {
+                if (event.detail.authenticated && authManager.isStaff()) {
+                    currentUser = event.detail.user
+                    hideLoginModal()
+                    loadStaffData()
+                } else {
+                    currentUser = null
+                    showLoginModal()
+                }
+            })
+        }
+
+        // Handle staff login
+        async function handleStaffLogin(e) {
+            e.preventDefault()
+            
+            const email = document.getElementById('staff-email').value
+            const password = document.getElementById('staff-password').value
+            
+            try {
+                const result = await authManager.staffLogin(email, password)
+                
+                if (result.success) {
+                    currentUser = result.user
+                    currentStaff = result.profile
+                    hideLoginModal()
+                    loadStaffData()
+                    showNotification('Staff login successful!', 'success')
+                } else {
+                    showNotification(result.error || 'Invalid staff credentials', 'error')
+                }
+            } catch (error) {
+                showNotification('Staff login failed. Please try again.', 'error')
+            }
+        }
+
+        // Handle logout
+        async function handleLogout() {
+            try {
+                await authManager.logout()
+                showNotification('Logged out successfully', 'success')
+                showLoginModal()
+            } catch (error) {
+                showNotification('Logout failed. Please try again.', 'error')
+            }
+        }
+
+        // Show login modal
+        function showLoginModal() {
+            document.getElementById('staff-login-modal').classList.remove('hidden')
+        }
+
+        // Hide login modal
+        function hideLoginModal() {
+            document.getElementById('staff-login-modal').classList.add('hidden')
+        }
+
+        // Load staff data
+        async function loadStaffData() {
+            if (!currentUser) return
+
+            try {
+                // Get staff profile
+                const staffProfile = await staffService.getStaffProfile(currentUser.id)
+                if (staffProfile) {
+                    currentStaff = staffProfile
+                    updateStaffInfo(staffProfile)
+                }
+
+                // Load dashboard statistics
+                await loadDashboardStats()
+
+                // Load today's schedule
+                await loadTodaysSchedule()
+
+                // Load recent activity
+                await loadRecentActivity()
+
+            } catch (error) {
+                console.error('Error loading staff data:', error)
+                showNotification('Error loading dashboard data', 'error')
+            }
+        }
+
+        // Update staff info in UI
+        function updateStaffInfo(staff) {
+            document.getElementById('staff-name').textContent = `${staff.first_name} ${staff.last_name}`
+            document.getElementById('staff-role').textContent = staff.role
+            document.getElementById('staff-initials').textContent = 
+                `${staff.first_name[0]}${staff.last_name[0]}`
+        }
+
+        // Load dashboard statistics
+        async function loadDashboardStats() {
+            try {
+                const stats = await staffService.getDashboardStats()
+                
+                document.getElementById('todays-appointments').textContent = stats.todaysAppointments
+                document.getElementById('active-patients').textContent = stats.activePatients
+                document.getElementById('pending-treatments').textContent = stats.pendingTreatments
+                document.getElementById('monthly-revenue').textContent = `$${stats.monthlyRevenue.toLocaleString()}`
+                
+            } catch (error) {
+                console.error('Error loading dashboard stats:', error)
+                // Set default values
+                document.getElementById('todays-appointments').textContent = '0'
+                document.getElementById('active-patients').textContent = '0'
+                document.getElementById('pending-treatments').textContent = '0'
+                document.getElementById('monthly-revenue').textContent = '$0'
+            }
+        }
+
+        // Load today's schedule
+        async function loadTodaysSchedule() {
+            try {
+                const appointments = await appointmentService.getTodaysAppointments()
+                const scheduleContainer = document.getElementById('todays-schedule')
+                
+                if (appointments.length === 0) {
+                    scheduleContainer.innerHTML = `
+                        <div class="text-center py-8">
+                            <p class="text-text-secondary">No appointments scheduled for today</p>
+                        </div>
+                    `
+                } else {
+                    scheduleContainer.innerHTML = appointments.map(appointment => `
+                        <div class="flex items-center space-x-4 p-4 bg-surface rounded-lg">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-semibold text-sm">
+                                    ${appointment.patients?.first_name?.[0] || 'P'}${appointment.patients?.last_name?.[0] || 'A'}
+                                </span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-text-primary">
+                                    ${appointment.patients?.first_name || 'Unknown'} ${appointment.patients?.last_name || 'Patient'}
+                                </p>
+                                <p class="text-sm text-text-secondary">${appointment.service_type}</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-medium text-primary">${appointment.appointment_time}</p>
+                                <p class="text-xs text-text-secondary">${appointment.status}</p>
+                            </div>
+                        </div>
+                    `).join('')
+                }
+            } catch (error) {
+                console.error('Error loading today\'s schedule:', error)
+                document.getElementById('todays-schedule').innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-error">Error loading schedule</p>
+                    </div>
+                `
+            }
+        }
+
+        // Load recent activity
+        async function loadRecentActivity() {
+            try {
+                const activities = await staffService.getRecentActivity()
+                const activityContainer = document.getElementById('recent-activity')
+                
+                if (activities.length === 0) {
+                    activityContainer.innerHTML = `
+                        <div class="text-center py-8">
+                            <p class="text-text-secondary">No recent activity</p>
+                        </div>
+                    `
+                } else {
+                    activityContainer.innerHTML = activities.map(activity => `
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-${getActivityColor(activity.status)}-100 rounded-full flex items-center justify-center mt-1">
+                                <svg class="w-4 h-4 text-${getActivityColor(activity.status)}" fill="currentColor" viewBox="0 0 20 20">
+                                    ${getActivityIcon(activity.status)}
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-primary">
+                                    ${activity.service_type} for 
+                                    <span class="font-medium">${activity.patients?.first_name || 'Unknown'} ${activity.patients?.last_name || 'Patient'}</span>
+                                </p>
+                                <p class="text-xs text-text-secondary">${formatDate(activity.updated_at)}</p>
+                            </div>
+                        </div>
+                    `).join('')
+                }
+            } catch (error) {
+                console.error('Error loading recent activity:', error)
+                document.getElementById('recent-activity').innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-error">Error loading activity</p>
+                    </div>
+                `
+            }
+        }
+
+        // Handle patient search
+        async function handlePatientSearch() {
+            const searchTerm = document.getElementById('patient-search').value.trim()
+            const resultsContainer = document.getElementById('search-results')
+            
+            if (!searchTerm) {
+                resultsContainer.classList.add('hidden')
+                return
+            }
+            
+            try {
+                const patients = await patientService.searchPatients(searchTerm)
+                
+                if (patients.length === 0) {
+                    resultsContainer.innerHTML = `
+                        <div class="text-center py-4">
+                            <p class="text-text-secondary">No patients found</p>
+                        </div>
+                    `
+                } else {
+                    resultsContainer.innerHTML = patients.map(patient => `
+                        <div class="flex items-center justify-between p-3 bg-surface rounded-lg hover:bg-primary-50 transition-gentle cursor-pointer">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <span class="text-primary font-semibold text-sm">
+                                        ${patient.first_name[0]}${patient.last_name[0]}
+                                    </span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary">${patient.first_name} ${patient.last_name}</p>
+                                    <p class="text-sm text-text-secondary">${patient.email}</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-text-primary">${patient.phone || 'No phone'}</p>
+                                <p class="text-xs text-text-secondary">${patient.status}</p>
+                            </div>
+                        </div>
+                    `).join('')
+                }
+                
+                resultsContainer.classList.remove('hidden')
+            } catch (error) {
+                console.error('Error searching patients:', error)
+                showNotification('Error searching patients', 'error')
+            }
+        }
+
+        // Helper functions
+        function getActivityColor(status) {
+            switch (status) {
+                case 'completed': return 'success'
+                case 'cancelled': return 'error'
+                case 'scheduled': return 'primary'
+                default: return 'warning'
+            }
+        }
+
+        function getActivityIcon(status) {
+            switch (status) {
+                case 'completed': 
+                    return '<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>'
+                case 'cancelled':
+                    return '<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 011.414 1.414L11.414 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>'
+                default:
+                    return '<path d="M10 2L3 7v11c0 5.55 3.84 10 9 11 5.16-1 9-5.45 9-11V7l-7-5z"/>'
+            }
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString)
+            const now = new Date()
+            const diffTime = Math.abs(now - date)
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+            
+            if (diffDays === 1) return 'Yesterday'
+            if (diffDays < 7) return `${diffDays} days ago`
+            return date.toLocaleDateString()
+        }
+
+        // Notification system
+        function showNotification(message, type) {
+            const notification = document.createElement('div')
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-floating max-w-sm ${
+                type === 'success' ? 'bg-success text-white' : 
+                type === 'error' ? 'bg-error text-white' : 
+                'bg-primary text-white'
+            }`
+            notification.textContent = message
+            
+            document.body.appendChild(notification)
+            
+            setTimeout(() => {
+                notification.remove()
+            }, 3000)
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dental Services - DentalCare Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdentalcare1896back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Emergency Care Banner -->
+    <div id="emergency-banner" class="bg-error text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-center gap-4">
+            <span>🚨 Dental Emergency? Call us now:</span>
+            <a href="tel:+1-555-DENTAL" class="font-bold underline hover:no-underline">(555) DENTAL-1</a>
+            <button onclick="document.getElementById('emergency-banner').style.display='none'" class="ml-4 text-white hover:text-gray-200">
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-gentle sticky top-8 z-40">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">DentalCare Pro</h1>
+                        <p class="text-xs text-text-secondary">Advanced Care, Personal Touch</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-primary font-semibold">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="btn-accent">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-surface">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-primary font-semibold">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="btn-accent inline-block text-center">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl lg:text-hero font-bold text-primary mb-6">
+                    Comprehensive <span class="text-gradient-primary">Dental Services</span>
+                </h1>
+                <p class="text-lg text-text-secondary mb-8 leading-relaxed">
+                    From routine cleanings to advanced cosmetic procedures, we provide complete dental care tailored to your unique needs. Our experienced team uses the latest technology to ensure comfortable, effective treatments.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="book_appointment.html" class="btn-accent">
+                        Schedule Consultation
+                    </a>
+                    <a href="#service-categories" class="btn-secondary">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories Navigation -->
+    <section id="service-categories" class="py-12 bg-white sticky top-20 z-30 shadow-gentle">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="scrollToSection('preventive')" class="service-nav-btn active" data-target="preventive">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Preventive Care
+                </button>
+                <button onclick="scrollToSection('restorative')" class="service-nav-btn" data-target="restorative">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    Restorative
+                </button>
+                <button onclick="scrollToSection('cosmetic')" class="service-nav-btn" data-target="cosmetic">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    Cosmetic
+                </button>
+                <button onclick="scrollToSection('emergency')" class="service-nav-btn" data-target="emergency">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    Emergency
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preventive Care Section -->
+    <section id="preventive" class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Preventive Care</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Prevention is the foundation of good oral health. Our comprehensive preventive services help you maintain a healthy smile for life.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Regular Cleanings -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Regular Cleanings & Checkups</h3>
+                            <p class="text-text-secondary mb-4">
+                                Professional cleanings every 6 months remove plaque and tartar buildup, preventing cavities and gum disease. Our gentle approach ensures comfort while maintaining optimal oral health.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Duration: 45-60 minutes
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Frequency: Every 6 months
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Insurance: Usually covered 100%
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Book Cleaning</a>
+                                <button onclick="toggleFAQ('cleaning-faq')" class="btn-secondary text-center">FAQ</button>
+                            </div>
+                            <div id="cleaning-faq" class="hidden mt-4 p-4 bg-surface rounded-lg">
+                                <h4 class="font-semibold mb-2">Frequently Asked Questions</h4>
+                                <div class="space-y-2 text-sm text-text-secondary">
+                                    <p><strong>Q: Will it hurt?</strong><br />A: Most patients experience no discomfort. We use gentle techniques and can provide numbing if needed.</p>
+                                    <p><strong>Q: What should I expect?</strong><br />A: Plaque removal, polishing, fluoride treatment, and comprehensive oral exam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fluoride Treatments -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Fluoride Treatments</h3>
+                            <p class="text-text-secondary mb-4">
+                                Professional fluoride applications strengthen tooth enamel and provide extra protection against cavities, especially beneficial for children and high-risk patients.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Duration: 5-10 minutes
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Best for: All ages, especially children
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $25-50 per treatment
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Schedule Treatment</a>
+                                <button onclick="assessCandidate('fluoride')" class="btn-secondary text-center">Am I a Candidate?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dental Sealants -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Dental Sealants</h3>
+                            <p class="text-text-secondary mb-4">
+                                Protective coatings applied to the chewing surfaces of back teeth to prevent cavities in the deep grooves where brushing can't reach effectively.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Duration: 30-45 minutes
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Ideal age: 6-14 years old
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Lasts: 5-10 years
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Book Sealants</a>
+                                <a href="javascript:void(0)" onclick="downloadPDF('sealants-care')" class="btn-secondary text-center">Download Care Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oral Cancer Screening -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Oral Cancer Screening</h3>
+                            <p class="text-text-secondary mb-4">
+                                Comprehensive examination of your mouth, throat, and neck to detect early signs of oral cancer. Early detection significantly improves treatment outcomes.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Duration: 10-15 minutes
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Recommended: Annual screening
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Painless and non-invasive
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Schedule Screening</a>
+                                <button onclick="toggleFAQ('screening-faq')" class="btn-secondary text-center">Learn More</button>
+                            </div>
+                            <div id="screening-faq" class="hidden mt-4 p-4 bg-surface rounded-lg">
+                                <h4 class="font-semibold mb-2">What to Expect</h4>
+                                <div class="space-y-2 text-sm text-text-secondary">
+                                    <p>• Visual examination of mouth, lips, and throat</p>
+                                    <p>• Gentle palpation of neck and jaw area</p>
+                                    <p>• Discussion of risk factors and symptoms</p>
+                                    <p>• Immediate results and recommendations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restorative Dentistry Section -->
+    <section id="restorative" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Restorative Dentistry</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Restore your teeth's function and appearance with our comprehensive restorative treatments. We use the latest materials and techniques for lasting results.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Dental Fillings -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Dental Fillings</h3>
+                            <p class="text-text-secondary mb-4">
+                                Tooth-colored composite fillings that blend seamlessly with your natural teeth. We remove decay and restore your tooth's strength and appearance.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Duration: 30-60 minutes
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Material: Tooth-colored composite
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $150-300 per filling
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Book Filling</a>
+                                <a href="javascript:void(0)" onclick="downloadPDF('filling-aftercare')" class="btn-secondary text-center">Aftercare Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dental Crowns -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Dental Crowns</h3>
+                            <p class="text-text-secondary mb-4">
+                                Custom-made caps that cover damaged teeth, restoring their shape, size, and strength. Perfect for severely decayed or broken teeth.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Timeline: 2-3 appointments
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Materials: Porcelain, ceramic, or metal
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $800-1,500 per crown
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Schedule Consultation</a>
+                                <button onclick="showBeforeAfter('crowns')" class="btn-secondary text-center">Before/After</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dental Bridges -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Dental Bridges</h3>
+                            <p class="text-text-secondary mb-4">
+                                Replace one or more missing teeth with a fixed bridge that's anchored to adjacent teeth. Restores your ability to chew and speak properly.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Timeline: 2-3 weeks
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Lifespan: 10-15 years
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $2,000-5,000 per bridge
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Book Consultation</a>
+                                <button onclick="assessCandidate('bridge')" class="btn-secondary text-center">Am I a Candidate?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Root Canal Therapy -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Root Canal Therapy</h3>
+                            <p class="text-text-secondary mb-4">
+                                Save infected or severely damaged teeth by removing infected pulp and sealing the tooth. Modern techniques make this comfortable and effective.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Duration: 1-2 appointments
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Success rate: 95%
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $800-1,200 per tooth
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Schedule Treatment</a>
+                                <button onclick="toggleFAQ('rootcanal-faq')" class="btn-secondary text-center">FAQ</button>
+                            </div>
+                            <div id="rootcanal-faq" class="hidden mt-4 p-4 bg-surface rounded-lg">
+                                <h4 class="font-semibold mb-2">Common Concerns</h4>
+                                <div class="space-y-2 text-sm text-text-secondary">
+                                    <p><strong>Q: Will it hurt?</strong><br />A: Modern anesthesia makes the procedure comfortable. Most patients report minimal discomfort.</p>
+                                    <p><strong>Q: How long does it take?</strong><br />A: Usually 60-90 minutes per appointment, with 1-2 appointments needed.</p>
+                                    <p><strong>Q: What's the alternative?</strong><br />A: Tooth extraction, which requires replacement with an implant or bridge.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cosmetic Procedures Section -->
+    <section id="cosmetic" class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Cosmetic Procedures</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Transform your smile with our advanced cosmetic treatments. Boost your confidence with procedures designed to enhance your natural beauty.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Teeth Whitening -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Professional Teeth Whitening</h3>
+                            <p class="text-text-secondary mb-4">
+                                Achieve a brighter, whiter smile with our professional whitening treatments. Safe, effective, and dramatically faster than over-the-counter options.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Duration: 60-90 minutes
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Results: 3-8 shades whiter
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $400-800 per treatment
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Book Whitening</a>
+                                <button onclick="showBeforeAfter('whitening')" class="btn-secondary text-center">Before/After Gallery</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Porcelain Veneers -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Porcelain Veneers</h3>
+                            <p class="text-text-secondary mb-4">
+                                Ultra-thin porcelain shells that cover the front surface of teeth, correcting chips, gaps, discoloration, and minor misalignment for a perfect smile.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Timeline: 2-3 appointments
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Lifespan: 10-20 years
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $1,000-2,500 per tooth
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Schedule Consultation</a>
+                                <button onclick="assessCandidate('veneers')" class="btn-secondary text-center">Am I a Candidate?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invisalign -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Invisalign Clear Aligners</h3>
+                            <p class="text-text-secondary mb-4">
+                                Straighten your teeth discreetly with custom-made clear aligners. Removable, comfortable, and virtually invisible during treatment.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Treatment time: 12-18 months
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Removable for eating and cleaning
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Cost: $3,000-7,000
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Free Consultation</a>
+                                <button onclick="showBeforeAfter('invisalign')" class="btn-secondary text-center">Success Stories</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smile Makeover -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Complete Smile Makeover</h3>
+                            <p class="text-text-secondary mb-4">
+                                Comprehensive treatment combining multiple procedures to completely transform your smile. Customized plan based on your goals and facial features.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Timeline: 3-6 months
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Includes: Multiple procedures
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Financing available
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Free Consultation</a>
+                                <button onclick="showBeforeAfter('makeover')" class="btn-secondary text-center">Transformation Gallery</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Services Section -->
+    <section id="emergency" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Emergency Dental Services</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Dental emergencies can't wait. We provide immediate care for urgent dental situations to relieve pain and prevent further damage.
+                </p>
+                <div class="mt-6 p-4 bg-error-50 rounded-lg border border-error-200">
+                    <p class="text-error font-semibold">
+                        🚨 For dental emergencies, call us immediately at <a href="tel:+1-555-DENTAL" class="underline">(555) DENTAL-1</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Severe Tooth Pain -->
+                <div class="card hover:shadow-floating transition-gentle border-l-4 border-l-error">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-error-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-error" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Severe Tooth Pain</h3>
+                            <p class="text-text-secondary mb-4">
+                                Intense, persistent tooth pain often indicates infection or nerve damage. We provide immediate pain relief and address the underlying cause.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-error mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Available: 24/7 emergency line
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-error mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Response: Same-day appointment
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-error mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Treatment: Pain relief + diagnosis
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="tel:+1-555-DENTAL" class="bg-error text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-error-600 transition-gentle">
+                                    Call Emergency Line
+                                </a>
+                                <button onclick="toggleFAQ('pain-faq')" class="btn-secondary text-center">Pain Management Tips</button>
+                            </div>
+                            <div id="pain-faq" class="hidden mt-4 p-4 bg-error-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">Immediate Pain Relief</h4>
+                                <div class="space-y-2 text-sm text-text-secondary">
+                                    <p>• Take over-the-counter pain medication as directed</p>
+                                    <p>• Apply cold compress to outside of cheek (20 min on/off)</p>
+                                    <p>• Rinse with warm salt water</p>
+                                    <p>• Avoid hot/cold foods and drinks</p>
+                                    <p>• Call us immediately for professional care</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dental Trauma -->
+                <div class="card hover:shadow-floating transition-gentle border-l-4 border-l-warning">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Dental Trauma & Injuries</h3>
+                            <p class="text-text-secondary mb-4">
+                                Knocked-out, chipped, or broken teeth require immediate attention. Quick action can often save the tooth and prevent complications.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-warning mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Critical: First 30 minutes
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-warning mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Success rate: Higher with quick care
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-warning mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Treatment: Immediate stabilization
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="tel:+1-555-DENTAL" class="bg-warning text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-warning-600 transition-gentle">
+                                    Call Now
+                                </a>
+                                <button onclick="toggleFAQ('trauma-faq')" class="btn-secondary text-center">Emergency Steps</button>
+                            </div>
+                            <div id="trauma-faq" class="hidden mt-4 p-4 bg-warning-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">If a Tooth is Knocked Out</h4>
+                                <div class="space-y-2 text-sm text-text-secondary">
+                                    <p>• Handle tooth by crown, not root</p>
+                                    <p>• Rinse gently with milk or saline</p>
+                                    <p>• Try to reinsert in socket if possible</p>
+                                    <p>• If not, store in milk or saliva</p>
+                                    <p>• Get to our office within 30 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swelling & Infection -->
+                <div class="card hover:shadow-floating transition-gentle border-l-4 border-l-error">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-error-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-error" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Swelling & Infection</h3>
+                            <p class="text-text-secondary mb-4">
+                                Facial swelling, especially with fever, can indicate a serious infection requiring immediate antibiotic treatment and drainage.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-error mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Urgent: Can spread quickly
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-error mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Treatment: Antibiotics + drainage
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-error mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Follow-up: Required monitoring
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="tel:+1-555-DENTAL" class="bg-error text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-error-600 transition-gentle">
+                                    Emergency Call
+                                </a>
+                                <a href="book_appointment.html" class="btn-secondary text-center">Schedule Follow-up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lost Filling/Crown -->
+                <div class="card hover:shadow-floating transition-gentle border-l-4 border-l-warning">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-primary mb-3">Lost Filling or Crown</h3>
+                            <p class="text-text-secondary mb-4">
+                                Lost dental work exposes sensitive tooth structure and can lead to pain or further damage. We provide same-day replacement when possible.
+                            </p>
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-warning mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Timing: Within 24-48 hours
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-warning mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Options: Temporary or permanent
+                                </div>
+                                <div class="flex items-center text-sm text-text-secondary">
+                                    <svg class="w-4 h-4 text-warning mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                    Prevention: Avoid hard foods
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="book_appointment.html" class="btn-accent text-center">Book Repair</a>
+                                <button onclick="toggleFAQ('lost-restoration-faq')" class="btn-secondary text-center">Temporary Care</button>
+                            </div>
+                            <div id="lost-restoration-faq" class="hidden mt-4 p-4 bg-warning-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">Temporary Protection</h4>
+                                <div class="space-y-2 text-sm text-text-secondary">
+                                    <p>• Keep the crown/filling if possible</p>
+                                    <p>• Use temporary dental cement from pharmacy</p>
+                                    <p>• Avoid chewing on affected side</p>
+                                    <p>• Rinse with warm salt water</p>
+                                    <p>• Schedule appointment within 48 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Estimation Tool -->
+    <section class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Treatment Cost Estimator</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Get an estimated cost range for your dental treatment. Actual costs may vary based on individual needs and insurance coverage.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="card-floating">
+                    <form id="cost-estimator" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Select Treatment</label>
+                                <select id="treatment-select" class="input-field" required>
+                                    <option value>Choose a treatment...</option>
+                                    <option value="cleaning">Regular Cleaning</option>
+                                    <option value="filling">Dental Filling</option>
+                                    <option value="crown">Dental Crown</option>
+                                    <option value="whitening">Teeth Whitening</option>
+                                    <option value="veneer">Porcelain Veneer</option>
+                                    <option value="invisalign">Invisalign Treatment</option>
+                                    <option value="root-canal">Root Canal</option>
+                                    <option value="bridge">Dental Bridge</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Insurance Coverage</label>
+                                <select id="insurance-select" class="input-field" required>
+                                    <option value>Select coverage...</option>
+                                    <option value="none">No Insurance</option>
+                                    <option value="basic">Basic Coverage (50-80%)</option>
+                                    <option value="premium">Premium Coverage (80-100%)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-accent w-full">
+                            Get Cost Estimate
+                        </button>
+                    </form>
+
+                    <div id="cost-result" class="hidden mt-6 p-4 bg-primary-50 rounded-lg">
+                        <h3 class="font-semibold text-primary mb-2">Estimated Cost Range</h3>
+                        <div id="cost-details" class="space-y-2 text-sm text-text-secondary">
+                            <!-- Cost details will be populated by JavaScript -->
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-primary-200">
+                            <p class="text-xs text-text-secondary">
+                                *Estimates are approximate and may vary based on individual treatment needs. Contact us for a personalized quote.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery Modal -->
+    <div id="gallery-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="gallery-title" class="text-2xl font-bold text-primary">Before & After Gallery</h3>
+                    <button onclick="closeGallery()" class="text-text-secondary hover:text-text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="gallery-content" class="grid md:grid-cols-2 gap-6">
+                    <!-- Gallery content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Candidate Assessment Modal -->
+    <div id="assessment-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="assessment-title" class="text-2xl font-bold text-primary">Am I a Candidate?</h3>
+                    <button onclick="closeAssessment()" class="text-text-secondary hover:text-text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="assessment-content">
+                    <!-- Assessment content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">DentalCare Pro</h3>
+                            <p class="text-sm text-primary-200">Advanced Care, Personal Touch</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Providing exceptional dental care with modern technology and compassionate service since 2010.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-primary-200 hover:text-white transition-gentle">Home</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Services</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-gentle">About</a></li>
+                        <li><a href="book_appointment.html" class="text-primary-200 hover:text-white transition-gentle">Book Appointment</a></li>
+                        <li><a href="patient_portal.html" class="text-primary-200 hover:text-white transition-gentle">Patient Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#preventive" class="text-primary-200 hover:text-white transition-gentle">Preventive Care</a></li>
+                        <li><a href="#restorative" class="text-primary-200 hover:text-white transition-gentle">Restorative Dentistry</a></li>
+                        <li><a href="#cosmetic" class="text-primary-200 hover:text-white transition-gentle">Cosmetic Procedures</a></li>
+                        <li><a href="#emergency" class="text-primary-200 hover:text-white transition-gentle">Emergency Care</a></li>
+                        <li><a href="tel:+1-555-DENTAL" class="text-primary-200 hover:text-white transition-gentle">24/7 Emergency Line</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-primary-200">123 Dental Street, City, ST 12345</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <a href="tel:+1-555-DENTAL" class="text-primary-200 hover:text-white transition-gentle">(555) DENTAL-1</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <a href="mailto:info@dentalcarepro.com" class="text-primary-200 hover:text-white transition-gentle">info@dentalcarepro.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-600 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 DentalCare Pro. All Rights Reserved. | HIPAA Compliant | Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Service navigation
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active nav button
+                document.querySelectorAll('.service-nav-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-target="${sectionId}"]`).classList.add('active');
+            }
+        }
+
+        // FAQ toggle
+        function toggleFAQ(faqId) {
+            const faq = document.getElementById(faqId);
+            if (faq) {
+                faq.classList.toggle('hidden');
+            }
+        }
+
+        // Before/After Gallery
+        function showBeforeAfter(treatment) {
+            const modal = document.getElementById('gallery-modal');
+            const title = document.getElementById('gallery-title');
+            const content = document.getElementById('gallery-content');
+            
+            const galleries = {
+                whitening: {
+                    title: 'Teeth Whitening Results',
+                    images: [
+                        {
+                            before: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2940&auto=format&fit=crop',
+                            after: 'https://images.unsplash.com/photo-1609648191739-f4c4d5c5e8b5?q=80&w=2940&auto=format&fit=crop',
+                            description: 'Professional whitening - 6 shades improvement'
+                        },
+                        {
+                            before: 'https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                            after: 'https://images.pixabay.com/photo/2021/01/04/06/21/dentist-5886699_1280.jpg',
+                            description: 'In-office whitening treatment results'
+                        }
+                    ]
+                },
+                crowns: {
+                    title: 'Dental Crown Transformations',
+                    images: [
+                        {
+                            before: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2940&auto=format&fit=crop',
+                            after: 'https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                            description: 'Porcelain crown restoration'
+                        }
+                    ]
+                },
+                invisalign: {
+                    title: 'Invisalign Success Stories',
+                    images: [
+                        {
+                            before: 'https://images.pixabay.com/photo/2021/01/04/06/21/dentist-5886699_1280.jpg',
+                            after: 'https://images.unsplash.com/photo-1609648191739-f4c4d5c5e8b5?q=80&w=2940&auto=format&fit=crop',
+                            description: '18-month Invisalign treatment'
+                        }
+                    ]
+                },
+                makeover: {
+                    title: 'Complete Smile Makeovers',
+                    images: [
+                        {
+                            before: 'https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                            after: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2940&auto=format&fit=crop',
+                            description: 'Complete smile transformation with veneers and whitening'
+                        }
+                    ]
+                }
+            };
+
+            const gallery = galleries[treatment];
+            if (gallery) {
+                title.textContent = gallery.title;
+                content.innerHTML = gallery.images.map(img => `
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="text-sm font-semibold text-text-secondary mb-2">Before</h4>
+                                <img src="${img.before}" alt="Before treatment" class="w-full h-48 object-cover rounded-lg" loading="lazy">
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-text-secondary mb-2">After</h4>
+                                <img src="${img.after}" alt="After treatment" class="w-full h-48 object-cover rounded-lg" loading="lazy">
+                            </div>
+                        </div>
+                        <p class="text-sm text-text-secondary text-center">${img.description}</p>
+                    </div>
+                `).join('');
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeGallery() {
+            document.getElementById('gallery-modal').classList.add('hidden');
+        }
+
+        // Candidate Assessment
+        function assessCandidate(treatment) {
+            const modal = document.getElementById('assessment-modal');
+            const title = document.getElementById('assessment-title');
+            const content = document.getElementById('assessment-content');
+            
+            const assessments = {
+                fluoride: {
+                    title: 'Fluoride Treatment Candidacy',
+                    questions: [
+                        'Do you have a history of cavities?',
+                        'Do you have sensitive teeth?',
+                        'Are you under 18 years old?',
+                        'Do you have dry mouth conditions?'
+                    ],
+                    info: 'Fluoride treatments are beneficial for most patients, especially children and those at higher risk for cavities.'
+                },
+                bridge: {
+                    title: 'Dental Bridge Candidacy',
+                    questions: [
+                        'Are you missing one or more teeth?',
+                        'Do you have healthy teeth adjacent to the gap?',
+                        'Do you have good oral hygiene habits?',
+                        'Are your gums healthy?'
+                    ],
+                    info: 'Good candidates have healthy adjacent teeth and gums, with realistic expectations about the procedure.'
+                },
+                veneers: {
+                    title: 'Porcelain Veneer Candidacy',
+                    questions: [
+                        'Do you have chipped, stained, or misaligned teeth?',
+                        'Do you have sufficient tooth enamel?',
+                        'Do you avoid teeth grinding (bruxism)?',
+                        'Are you committed to good oral hygiene?'
+                    ],
+                    info: 'Ideal candidates have healthy teeth and gums with cosmetic concerns that veneers can address.'
+                }
+            };
+
+            const assessment = assessments[treatment];
+            if (assessment) {
+                title.textContent = assessment.title;
+                content.innerHTML = `
+                    <div class="space-y-6">
+                        <p class="text-text-secondary">${assessment.info}</p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-primary">Quick Assessment:</h4>
+                            ${assessment.questions.map(question => `
+                                <label class="flex items-center space-x-3">
+                                    <input type="checkbox" class="w-4 h-4 text-primary border-surface rounded focus:ring-primary">
+                                    <span class="text-sm text-text-secondary">${question}</span>
+                                </label>
+                            `).join('')}
+                        </div>
+                        <div class="bg-primary-50 p-4 rounded-lg">
+                            <p class="text-sm text-text-secondary">
+                                This is a general assessment. Schedule a consultation for a personalized evaluation of your candidacy.
+                            </p>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="book_appointment.html" class="btn-accent flex-1 text-center">Schedule Consultation</a>
+                            <button onclick="closeAssessment()" class="btn-secondary flex-1">Close</button>
+                        </div>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeAssessment() {
+            document.getElementById('assessment-modal').classList.add('hidden');
+        }
+
+        // PDF Download simulation
+        function downloadPDF(type) {
+            alert(`Downloading ${type} guide... This would normally download a PDF with detailed care instructions.`);
+        }
+
+        // Cost Estimator
+        document.getElementById('cost-estimator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const treatment = document.getElementById('treatment-select').value;
+            const insurance = document.getElementById('insurance-select').value;
+            
+            const costs = {
+                cleaning: { base: 100, range: '80-150' },
+                filling: { base: 200, range: '150-300' },
+                crown: { base: 1200, range: '800-1500' },
+                whitening: { base: 600, range: '400-800' },
+                veneer: { base: 1500, range: '1000-2500' },
+                invisalign: { base: 5000, range: '3000-7000' },
+                'root-canal': { base: 1000, range: '800-1200' },
+                bridge: { base: 3000, range: '2000-5000' }
+            };
+            
+            const insuranceMultipliers = {
+                none: 1,
+                basic: 0.4,
+                premium: 0.2
+            };
+            
+            if (costs[treatment] && insuranceMultipliers[insurance] !== undefined) {
+                const baseCost = costs[treatment].base;
+                const multiplier = insuranceMultipliers[insurance];
+                const estimatedCost = Math.round(baseCost * multiplier);
+                
+                document.getElementById('cost-result').classList.remove('hidden');
+                document.getElementById('cost-details').innerHTML = `
+                    <div class="flex justify-between">
+                        <span>Treatment:</span>
+                        <span class="font-semibold">${treatment.charAt(0).toUpperCase() + treatment.slice(1).replace('-', ' ')}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Base Cost Range:</span>
+                        <span>$${costs[treatment].range}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Insurance Coverage:</span>
+                        <span>${insurance === 'none' ? 'None' : insurance.charAt(0).toUpperCase() + insurance.slice(1)}</span>
+                    </div>
+                    <div class="flex justify-between font-semibold text-primary pt-2 border-t border-primary-200">
+                        <span>Your Estimated Cost:</span>
+                        <span>$${estimatedCost}</span>
+                    </div>
+                `;
+            }
+        });
+
+        // Service navigation active state on scroll
+        window.addEventListener('scroll', function() {
+            const sections = ['preventive', 'restorative', 'cosmetic', 'emergency'];
+            const navButtons = document.querySelectorAll('.service-nav-btn');
+            
+            let currentSection = '';
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 200 && rect.bottom >= 200) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.target === currentSection) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'gallery-modal') {
+                closeGallery();
+            }
+            if (e.target.id === 'assessment-modal') {
+                closeAssessment();
+            }
+        });
+    </script>
+
+    <style>
+        .service-nav-btn {
+            @apply px-4 py-2 rounded-lg font-medium text-text-secondary hover:text-primary hover:bg-primary-50 transition-gentle flex items-center;
+        }
+        
+        .service-nav-btn.active {
+            @apply bg-primary text-white;
+        }
+        
+        .service-nav-btn:hover.active {
+            @apply bg-primary-700;
+        }
+    </style>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

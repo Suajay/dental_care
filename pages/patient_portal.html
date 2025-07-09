@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Portal - DentalCare Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdentalcare1896back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-gentle sticky top-0 z-40">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">DentalCare Pro</h1>
+                        <p class="text-xs text-text-secondary">Advanced Care, Personal Touch</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="text-text-secondary hover:text-primary transition-gentle">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-primary font-semibold">Patient Portal</a>
+                    <button id="logout-btn" class="text-error hover:text-error-600 transition-gentle">Logout</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-surface">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="text-text-secondary hover:text-primary transition-gentle">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-primary font-semibold">Patient Portal</a>
+                    <button id="mobile-logout-btn" class="text-error hover:text-error-600 transition-gentle text-left">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Form (Initially Hidden) -->
+    <div id="login-section" class="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center py-12 px-4">
+        <div class="max-w-md w-full">
+            <div class="card-floating">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-primary mb-2">Patient Portal Login</h2>
+                    <p class="text-text-secondary">Access your dental records and appointments</p>
+                </div>
+
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                        <input type="email" id="login-email" class="input-field" placeholder="Enter your email" required />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Password</label>
+                        <input type="password" id="login-password" class="input-field" placeholder="Enter your password" required />
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-surface text-primary focus:ring-primary-500" />
+                            <span class="ml-2 text-sm text-text-secondary">Remember me</span>
+                        </label>
+                        <a href="javascript:void(0)" class="text-sm text-primary hover:text-primary-700 transition-gentle">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">
+                        Sign In Securely
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-text-secondary">
+                        Don't have an account? 
+                        <a href="javascript:void(0)" id="show-register" class="text-primary hover:text-primary-700 transition-gentle">Sign up here</a>
+                    </p>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-text-secondary">
+                        Need help accessing your account? 
+                        <a href="tel:+1-555-DENTAL" class="text-primary hover:text-primary-700 transition-gentle">Call (555) DENTAL-1</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Form (Initially Hidden) -->
+    <div id="register-section" class="hidden min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center py-12 px-4">
+        <div class="max-w-md w-full">
+            <div class="card-floating">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-primary mb-2">Create Patient Account</h2>
+                    <p class="text-text-secondary">Join DentalCare Pro for better oral health</p>
+                </div>
+
+                <form id="register-form" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">First Name</label>
+                            <input type="text" id="register-first-name" class="input-field" placeholder="First name" required />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Last Name</label>
+                            <input type="text" id="register-last-name" class="input-field" placeholder="Last name" required />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                        <input type="email" id="register-email" class="input-field" placeholder="Enter your email" required />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Phone Number</label>
+                        <input type="tel" id="register-phone" class="input-field" placeholder="(555) 123-4567" required />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Date of Birth</label>
+                        <input type="date" id="register-dob" class="input-field" required />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Password</label>
+                        <input type="password" id="register-password" class="input-field" placeholder="Create a password" required />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2">Confirm Password</label>
+                        <input type="password" id="register-confirm-password" class="input-field" placeholder="Confirm your password" required />
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="register-terms" class="rounded border-surface text-primary focus:ring-primary-500" required />
+                        <label for="register-terms" class="ml-2 text-sm text-text-secondary">
+                            I agree to the <a href="#" class="text-primary hover:text-primary-700">Terms of Service</a> and <a href="#" class="text-primary hover:text-primary-700">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">
+                        Create Account
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-text-secondary">
+                        Already have an account? 
+                        <a href="javascript:void(0)" id="show-login" class="text-primary hover:text-primary-700 transition-gentle">Sign in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Portal Dashboard (Initially Hidden) -->
+    <div id="portal-dashboard" class="hidden">
+        <!-- Welcome Header -->
+        <section class="bg-gradient-to-r from-primary to-secondary text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl lg:text-3xl font-bold mb-2">Welcome back, <span id="patient-name">Patient</span></h1>
+                        <p class="text-primary-200">Your next appointment is on <span id="next-appointment" class="font-semibold">Loading...</span></p>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">4.9★</div>
+                            <div class="text-sm text-primary-200">Your Rating</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold" id="visit-count">--</div>
+                            <div class="text-sm text-primary-200">Visits This Year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="py-8 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-4">
+                    <button class="card hover:shadow-floating transition-gentle text-center">
+                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-primary">Book Appointment</h3>
+                        <p class="text-sm text-text-secondary">Schedule your next visit</p>
+                    </button>
+                    <button class="card hover:shadow-floating transition-gentle text-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-primary">Message Team</h3>
+                        <p class="text-sm text-text-secondary">Secure communication</p>
+                    </button>
+                    <button class="card hover:shadow-floating transition-gentle text-center">
+                        <div class="w-12 h-12 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-primary">Pay Bill</h3>
+                        <p class="text-sm text-text-secondary">View and pay online</p>
+                    </button>
+                    <button class="card hover:shadow-floating transition-gentle text-center">
+                        <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h4v2zm0-3H9V6h4v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-primary">View Records</h3>
+                        <p class="text-sm text-text-secondary">Complete dental history</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Content -->
+        <section class="py-8 bg-surface">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Left Column -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Upcoming Appointments -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-xl font-bold text-primary">Upcoming Appointments</h2>
+                                <a href="book_appointment.html" class="text-accent hover:text-accent-600 transition-gentle font-medium">Book New</a>
+                            </div>
+                            <div id="upcoming-appointments" class="space-y-4">
+                                <div class="text-center py-8">
+                                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                    <p class="text-text-secondary mt-2">Loading appointments...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Visit Summary -->
+                        <div class="card">
+                            <h2 class="text-xl font-bold text-primary mb-6">Recent Visit Summary</h2>
+                            <div id="recent-visits" class="space-y-4">
+                                <div class="text-center py-8">
+                                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                    <p class="text-text-secondary mt-2">Loading visit history...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Treatment Plan Progress -->
+                        <div class="card">
+                            <h2 class="text-xl font-bold text-primary mb-6">Treatment Plan Progress</h2>
+                            <div id="treatment-progress" class="space-y-6">
+                                <div class="text-center py-8">
+                                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                    <p class="text-text-secondary mt-2">Loading treatment plans...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="space-y-8">
+                        <!-- Insurance Information -->
+                        <div class="card">
+                            <h2 class="text-xl font-bold text-primary mb-6">Insurance Information</h2>
+                            <div id="insurance-info" class="space-y-4">
+                                <div class="text-center py-8">
+                                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                    <p class="text-text-secondary mt-2">Loading insurance info...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Messages -->
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-xl font-bold text-primary">Messages</h2>
+                                <button class="text-accent hover:text-accent-600 transition-gentle font-medium">New Message</button>
+                            </div>
+                            <div id="messages" class="space-y-4">
+                                <div class="text-center py-8">
+                                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                    <p class="text-text-secondary mt-2">Loading messages...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Summary -->
+                        <div class="card">
+                            <h2 class="text-xl font-bold text-primary mb-6">Payment Summary</h2>
+                            <div id="payment-summary" class="space-y-4">
+                                <div class="text-center py-8">
+                                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+                                    <p class="text-text-secondary mt-2">Loading payment info...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">DentalCare Pro</h3>
+                            <p class="text-sm text-primary-200">Advanced Care, Personal Touch</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Providing exceptional dental care with modern technology and compassionate service since 2010.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-primary-200 hover:text-white transition-gentle">Home</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Services</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-gentle">About</a></li>
+                        <li><a href="book_appointment.html" class="text-primary-200 hover:text-white transition-gentle">Book Appointment</a></li>
+                        <li><a href="patient_portal.html" class="text-primary-200 hover:text-white transition-gentle">Patient Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">General Dentistry</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Cosmetic Procedures</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Oral Surgery</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Emergency Care</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Preventive Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-primary-200">123 Dental Street, City, ST 12345</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <a href="tel:+1-555-DENTAL" class="text-primary-200 hover:text-white transition-gentle">(555) DENTAL-1</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <a href="mailto:info@dentalcarepro.com" class="text-primary-200 hover:text-white transition-gentle">info@dentalcarepro.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-600 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 DentalCare Pro. All Rights Reserved. | HIPAA Compliant | Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { authManager } from '../js/auth-manager.js'
+        import { patientService } from '../js/patient-service.js'
+        import { appointmentService } from '../js/appointment-service.js'
+
+        let currentUser = null
+        let currentPatient = null
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', async () => {
+            await authManager.init()
+            setupEventListeners()
+            checkAuthState()
+        })
+
+        // Check authentication state
+        function checkAuthState() {
+            currentUser = authManager.getCurrentUser()
+            if (currentUser) {
+                showDashboard()
+                loadPatientData()
+            } else {
+                showLogin()
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu')
+                mobileMenu.classList.toggle('hidden')
+            })
+
+            // Login form
+            document.getElementById('login-form').addEventListener('submit', handleLogin)
+
+            // Register form
+            document.getElementById('register-form').addEventListener('submit', handleRegister)
+
+            // Show register form
+            document.getElementById('show-register').addEventListener('click', () => {
+                document.getElementById('login-section').classList.add('hidden')
+                document.getElementById('register-section').classList.remove('hidden')
+            })
+
+            // Show login form
+            document.getElementById('show-login').addEventListener('click', () => {
+                document.getElementById('register-section').classList.add('hidden')
+                document.getElementById('login-section').classList.remove('hidden')
+            })
+
+            // Logout buttons
+            document.getElementById('logout-btn').addEventListener('click', handleLogout)
+            document.getElementById('mobile-logout-btn').addEventListener('click', handleLogout)
+
+            // Listen for auth state changes
+            window.addEventListener('authStateChanged', (event) => {
+                if (event.detail.authenticated) {
+                    currentUser = event.detail.user
+                    showDashboard()
+                    loadPatientData()
+                } else {
+                    currentUser = null
+                    showLogin()
+                }
+            })
+        }
+
+        // Handle login
+        async function handleLogin(e) {
+            e.preventDefault()
+            
+            const email = document.getElementById('login-email').value
+            const password = document.getElementById('login-password').value
+            
+            try {
+                const result = await authManager.patientLogin(email, password)
+                
+                if (result.success) {
+                    currentUser = result.user
+                    currentPatient = result.profile
+                    showNotification('Login successful! Welcome to your patient portal.', 'success')
+                    showDashboard()
+                    loadPatientData()
+                } else {
+                    showNotification(result.error || 'Login failed. Please try again.', 'error')
+                }
+            } catch (error) {
+                showNotification('Login failed. Please try again.', 'error')
+            }
+        }
+
+        // Handle registration
+        async function handleRegister(e) {
+            e.preventDefault()
+            
+            const password = document.getElementById('register-password').value
+            const confirmPassword = document.getElementById('register-confirm-password').value
+            
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match.', 'error')
+                return
+            }
+            
+            const userData = {
+                firstName: document.getElementById('register-first-name').value,
+                lastName: document.getElementById('register-last-name').value,
+                phone: document.getElementById('register-phone').value,
+                dateOfBirth: document.getElementById('register-dob').value
+            }
+            
+            try {
+                const result = await authManager.patientRegister(
+                    document.getElementById('register-email').value,
+                    password,
+                    userData
+                )
+                
+                if (result.success) {
+                    showNotification('Account created successfully! Please check your email to verify your account.', 'success')
+                    document.getElementById('register-section').classList.add('hidden')
+                    document.getElementById('login-section').classList.remove('hidden')
+                } else {
+                    showNotification(result.error || 'Registration failed. Please try again.', 'error')
+                }
+            } catch (error) {
+                showNotification('Registration failed. Please try again.', 'error')
+            }
+        }
+
+        // Handle logout
+        async function handleLogout() {
+            try {
+                await authManager.logout()
+                showNotification('You have been logged out successfully.', 'success')
+                showLogin()
+            } catch (error) {
+                showNotification('Logout failed. Please try again.', 'error')
+            }
+        }
+
+        // Show login section
+        function showLogin() {
+            document.getElementById('login-section').classList.remove('hidden')
+            document.getElementById('register-section').classList.add('hidden')
+            document.getElementById('portal-dashboard').classList.add('hidden')
+            document.getElementById('login-form').reset()
+        }
+
+        // Show dashboard
+        function showDashboard() {
+            document.getElementById('login-section').classList.add('hidden')
+            document.getElementById('register-section').classList.add('hidden')
+            document.getElementById('portal-dashboard').classList.remove('hidden')
+        }
+
+        // Load patient data
+        async function loadPatientData() {
+            if (!currentUser) return
+
+            try {
+                // Get patient profile
+                const patientProfile = await patientService.getPatientProfile(currentUser.id)
+                if (patientProfile) {
+                    currentPatient = patientProfile
+                    updatePatientInfo(patientProfile)
+                }
+
+                // Load appointments
+                await loadAppointments()
+
+                // Load other data
+                await loadRecentVisits()
+                await loadTreatmentProgress()
+                await loadInsuranceInfo()
+                await loadMessages()
+                await loadPaymentSummary()
+
+            } catch (error) {
+                console.error('Error loading patient data:', error)
+                showNotification('Error loading patient data. Please refresh the page.', 'error')
+            }
+        }
+
+        // Update patient info in UI
+        function updatePatientInfo(patient) {
+            document.getElementById('patient-name').textContent = `${patient.first_name} ${patient.last_name}`
+        }
+
+        // Load appointments
+        async function loadAppointments() {
+            if (!currentPatient) return
+
+            try {
+                const appointments = await patientService.getUpcomingAppointments(currentPatient.id)
+                const appointmentsContainer = document.getElementById('upcoming-appointments')
+                
+                if (appointments.length === 0) {
+                    appointmentsContainer.innerHTML = `
+                        <div class="text-center py-8">
+                            <p class="text-text-secondary">No upcoming appointments</p>
+                            <a href="book_appointment.html" class="btn-primary mt-4">Book Your First Appointment</a>
+                        </div>
+                    `
+                } else {
+                    // Update next appointment info
+                    const nextAppointment = appointments[0]
+                    const appointmentDate = new Date(nextAppointment.appointment_date)
+                    const appointmentTime = nextAppointment.appointment_time
+                    document.getElementById('next-appointment').textContent = 
+                        `${appointmentDate.toLocaleDateString()} at ${appointmentTime}`
+                    
+                    // Display appointments
+                    appointmentsContainer.innerHTML = appointments.map(appointment => `
+                        <div class="flex items-center justify-between p-4 bg-accent-50 rounded-lg border-l-4 border-accent">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-primary">${appointment.service_type}</h3>
+                                    <p class="text-sm text-text-secondary">Dr. ${appointment.staff?.first_name || 'Staff'}</p>
+                                    <p class="text-sm text-accent font-medium">${new Date(appointment.appointment_date).toLocaleDateString()} at ${appointment.appointment_time}</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button class="text-primary hover:text-primary-700 transition-gentle" onclick="editAppointment('${appointment.id}')">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    `).join('')
+                }
+            } catch (error) {
+                console.error('Error loading appointments:', error)
+                document.getElementById('upcoming-appointments').innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-error">Error loading appointments</p>
+                    </div>
+                `
+            }
+        }
+
+        // Load recent visits
+        async function loadRecentVisits() {
+            if (!currentPatient) return
+
+            try {
+                const visits = await patientService.getPastAppointments(currentPatient.id)
+                const visitsContainer = document.getElementById('recent-visits')
+                
+                if (visits.length === 0) {
+                    visitsContainer.innerHTML = `
+                        <div class="text-center py-8">
+                            <p class="text-text-secondary">No recent visits</p>
+                        </div>
+                    `
+                } else {
+                    // Show most recent visit
+                    const recentVisit = visits[0]
+                    visitsContainer.innerHTML = `
+                        <div class="p-4 bg-success-50 rounded-lg">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-semibold text-primary">${recentVisit.service_type}</h3>
+                                <span class="text-sm text-success font-medium">${recentVisit.status}</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p class="text-text-secondary">Date: ${new Date(recentVisit.appointment_date).toLocaleDateString()}</p>
+                                    <p class="text-text-secondary">Provider: Dr. ${recentVisit.staff?.first_name || 'Staff'}</p>
+                                    <p class="text-text-secondary">Duration: ${recentVisit.duration_minutes} minutes</p>
+                                </div>
+                                <div>
+                                    <p class="text-text-secondary">Treatment: ${recentVisit.service_type}</p>
+                                    <p class="text-text-secondary">Status: ${recentVisit.status}</p>
+                                </div>
+                            </div>
+                            ${recentVisit.notes ? `
+                                <div class="mt-3 pt-3 border-t border-success-200">
+                                    <p class="text-sm text-text-primary"><strong>Notes:</strong> ${recentVisit.notes}</p>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `
+                }
+            } catch (error) {
+                console.error('Error loading recent visits:', error)
+                document.getElementById('recent-visits').innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-error">Error loading visit history</p>
+                    </div>
+                `
+            }
+        }
+
+        // Load treatment progress (mock data for now)
+        async function loadTreatmentProgress() {
+            document.getElementById('treatment-progress').innerHTML = `
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-primary">Preventive Care Plan</h3>
+                        <span class="text-sm text-success font-medium">On Track</span>
+                    </div>
+                    <div class="w-full bg-surface rounded-full h-2">
+                        <div class="bg-success h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                    <div class="mt-2 text-sm text-text-secondary">
+                        <p>Regular cleanings and checkups - Next visit in 4 months</p>
+                    </div>
+                </div>
+            `
+        }
+
+        // Load insurance info (mock data)
+        async function loadInsuranceInfo() {
+            document.getElementById('insurance-info').innerHTML = `
+                <div class="p-4 bg-primary-50 rounded-lg">
+                    <h3 class="font-semibold text-primary mb-2">Primary Insurance</h3>
+                    <div class="text-sm space-y-1">
+                        <p><strong>Provider:</strong> ${currentPatient?.insurance_info?.provider || 'Not specified'}</p>
+                        <p><strong>Policy #:</strong> ${currentPatient?.insurance_info?.policy_number || 'Not specified'}</p>
+                        <p><strong>Group #:</strong> ${currentPatient?.insurance_info?.group_number || 'Not specified'}</p>
+                        <p><strong>Effective:</strong> ${currentPatient?.insurance_info?.effective_date || 'Not specified'}</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="text-center p-3 bg-success-50 rounded-lg">
+                        <div class="font-semibold text-success">$1,200</div>
+                        <div class="text-text-secondary">Annual Maximum</div>
+                    </div>
+                    <div class="text-center p-3 bg-warning-50 rounded-lg">
+                        <div class="font-semibold text-warning">$350</div>
+                        <div class="text-text-secondary">Used This Year</div>
+                    </div>
+                </div>
+            `
+        }
+
+        // Load messages (mock data)
+        async function loadMessages() {
+            document.getElementById('messages').innerHTML = `
+                <div class="p-3 bg-accent-50 rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-primary text-sm">Appointment Reminder</h3>
+                        <span class="text-xs text-text-secondary">2 days ago</span>
+                    </div>
+                    <p class="text-sm text-text-secondary">Your appointment is coming up. Please arrive 15 minutes early...</p>
+                </div>
+                <div class="p-3 bg-primary-50 rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-primary text-sm">Welcome Message</h3>
+                        <span class="text-xs text-text-secondary">1 week ago</span>
+                    </div>
+                    <p class="text-sm text-text-secondary">Welcome to DentalCare Pro! We're excited to be your dental care provider...</p>
+                </div>
+            `
+        }
+
+        // Load payment summary (mock data)
+        async function loadPaymentSummary() {
+            document.getElementById('payment-summary').innerHTML = `
+                <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
+                    <div>
+                        <h3 class="font-semibold text-success">Account Balance</h3>
+                        <p class="text-sm text-text-secondary">Current amount due</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xl font-bold text-success">$0.00</div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-text-secondary">Last Payment</span>
+                        <span class="text-text-primary">$125.00 - ${new Date().toLocaleDateString()}</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-text-secondary">Insurance Covered</span>
+                        <span class="text-text-primary">$75.00</span>
+                    </div>
+                </div>
+                <button class="btn-accent w-full">View Payment History</button>
+            `
+        }
+
+        // Edit appointment function
+        window.editAppointment = function(appointmentId) {
+            showNotification('Edit appointment feature coming soon!', 'info')
+        }
+
+        // Notification system
+        function showNotification(message, type) {
+            const notification = document.createElement('div')
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-floating max-w-sm ${
+                type === 'success' ? 'bg-success text-white' : 
+                type === 'error' ? 'bg-error text-white' : 
+                'bg-primary text-white'
+            }`
+            notification.textContent = message
+            
+            document.body.appendChild(notification)
+            
+            setTimeout(() => {
+                notification.remove()
+            }, 3000)
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

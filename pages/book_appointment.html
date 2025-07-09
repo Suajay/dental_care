@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Appointment - DentalCare Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdentalcare1896back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Emergency Care Banner -->
+    <div id="emergency-banner" class="bg-error text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-center gap-4">
+            <span>🚨 Dental Emergency? Call us now:</span>
+            <a href="tel:+1-555-DENTAL" class="font-bold underline hover:no-underline">(555) DENTAL-1</a>
+            <button onclick="document.getElementById('emergency-banner').style.display='none'" class="ml-4 text-white hover:text-gray-200">
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-gentle sticky top-8 z-40">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">DentalCare Pro</h1>
+                        <p class="text-xs text-text-secondary">Advanced Care, Personal Touch</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="text-primary font-semibold">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-surface">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-gentle">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="text-primary font-semibold">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center space-y-4">
+                <h1 class="text-4xl lg:text-hero font-bold text-primary">Book Your Appointment</h1>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Schedule your visit with our experienced dental team. We offer flexible scheduling and same-day appointments for urgent care.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="text-text-secondary">Real-time Availability</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="text-text-secondary">Instant Confirmation</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="text-text-secondary">HIPAA Secure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Appointment Alert -->
+    <section class="bg-error-50 border-l-4 border-error py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-error rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-error">Dental Emergency?</h3>
+                    <p class="text-sm text-text-secondary">For urgent dental care, call us immediately at <a href="tel:+1-555-DENTAL" class="font-semibold text-error hover:underline">(555) DENTAL-1</a> or use the emergency booking option below.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Form -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Booking Steps -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-center space-x-4 mb-6">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                            <span class="text-sm font-medium text-primary">Service & Doctor</span>
+                        </div>
+                        <div class="w-8 h-0.5 bg-surface"></div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-surface text-text-secondary rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                            <span class="text-sm text-text-secondary">Date & Time</span>
+                        </div>
+                        <div class="w-8 h-0.5 bg-surface"></div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-surface text-text-secondary rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                            <span class="text-sm text-text-secondary">Patient Info</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Service Selection -->
+                <div id="step-1" class="card-floating space-y-6">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-primary mb-2">Select Service & Doctor</h2>
+                        <p class="text-text-secondary">Choose the type of appointment and your preferred dentist</p>
+                    </div>
+
+                    <!-- Service Type Selection -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-text-primary">Appointment Type</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <label class="appointment-type-card cursor-pointer">
+                                <input type="radio" name="appointment-type" value="routine" class="sr-only" />
+                                <div class="card hover:shadow-floating transition-gentle border-2 border-transparent">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Routine Checkup</h4>
+                                            <p class="text-sm text-text-secondary">Regular cleaning and examination</p>
+                                            <p class="text-xs text-accent font-medium mt-1">60 minutes • Most insurance covered</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="appointment-type-card cursor-pointer">
+                                <input type="radio" name="appointment-type" value="cleaning" class="sr-only" />
+                                <div class="card hover:shadow-floating transition-gentle border-2 border-transparent">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Deep Cleaning</h4>
+                                            <p class="text-sm text-text-secondary">Professional teeth cleaning</p>
+                                            <p class="text-xs text-accent font-medium mt-1">90 minutes • Insurance varies</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="appointment-type-card cursor-pointer">
+                                <input type="radio" name="appointment-type" value="consultation" class="sr-only" />
+                                <div class="card hover:shadow-floating transition-gentle border-2 border-transparent">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Consultation</h4>
+                                            <p class="text-sm text-text-secondary">Treatment planning and discussion</p>
+                                            <p class="text-xs text-accent font-medium mt-1">30 minutes • Consultation fee</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="appointment-type-card cursor-pointer">
+                                <input type="radio" name="appointment-type" value="emergency" class="sr-only" />
+                                <div class="card hover:shadow-floating transition-gentle border-2 border-transparent">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-10 h-10 bg-error-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-error" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Emergency Care</h4>
+                                            <p class="text-sm text-text-secondary">Urgent dental treatment</p>
+                                            <p class="text-xs text-error font-medium mt-1">Immediate • Priority booking</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Doctor Selection -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold text-text-primary">Choose Your Dentist</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <label class="doctor-card cursor-pointer">
+                                <input type="radio" name="doctor" value="dr-johnson" class="sr-only" />
+                                <div class="card hover:shadow-floating transition-gentle border-2 border-transparent">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-16 h-16 overflow-hidden rounded-full flex-shrink-0">
+                                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Sarah Johnson" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Dr. Sarah Johnson</h4>
+                                            <p class="text-sm text-accent">Lead Dentist</p>
+                                            <p class="text-xs text-text-secondary">General & Cosmetic Dentistry</p>
+                                            <div class="flex items-center space-x-1 mt-1">
+                                                <svg class="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <span class="text-xs text-text-secondary">4.9 (127 reviews)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="doctor-card cursor-pointer">
+                                <input type="radio" name="doctor" value="dr-chen" class="sr-only" />
+                                <div class="card hover:shadow-floating transition-gentle border-2 border-transparent">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-16 h-16 overflow-hidden rounded-full flex-shrink-0">
+                                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Michael Chen" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/07/14/17/32/doctor-6466701_1280.jpg'; this.onerror=null;" />
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-text-primary">Dr. Michael Chen</h4>
+                                            <p class="text-sm text-accent">Oral Surgeon</p>
+                                            <p class="text-xs text-text-secondary">Surgery & Implants</p>
+                                            <div class="flex items-center space-x-1 mt-1">
+                                                <svg class="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                                </svg>
+                                                <span class="text-xs text-text-secondary">4.8 (89 reviews)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <button id="next-step-1" class="btn-accent" disabled>
+                            Continue to Date & Time
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Date & Time Selection -->
+                <div id="step-2" class="card-floating space-y-6 hidden">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-primary mb-2">Select Date & Time</h2>
+                        <p class="text-text-secondary">Choose your preferred appointment date and time slot</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Calendar -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-text-primary">Available Dates</h3>
+                            <div class="bg-surface rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h4 class="font-semibold text-text-primary">January 2025</h4>
+                                    <div class="flex space-x-2">
+                                        <button class="p-1 hover:bg-white rounded">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                            </svg>
+                                        </button>
+                                        <button class="p-1 hover:bg-white rounded">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Calendar Grid -->
+                                <div class="grid grid-cols-7 gap-1 text-center text-sm">
+                                    <div class="p-2 text-text-secondary font-medium">Sun</div>
+                                    <div class="p-2 text-text-secondary font-medium">Mon</div>
+                                    <div class="p-2 text-text-secondary font-medium">Tue</div>
+                                    <div class="p-2 text-text-secondary font-medium">Wed</div>
+                                    <div class="p-2 text-text-secondary font-medium">Thu</div>
+                                    <div class="p-2 text-text-secondary font-medium">Fri</div>
+                                    <div class="p-2 text-text-secondary font-medium">Sat</div>
+                                    
+                                    <!-- Calendar dates -->
+                                    <div class="p-2 text-text-secondary">29</div>
+                                    <div class="p-2 text-text-secondary">30</div>
+                                    <div class="p-2 text-text-secondary">31</div>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">1</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">2</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">3</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">4</button>
+                                    
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">5</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">6</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">7</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">8</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">9</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">10</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">11</button>
+                                    
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">12</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">13</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">14</button>
+                                    <button class="p-2 bg-primary text-white rounded">15</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">16</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">17</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">18</button>
+                                    
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">19</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">20</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">21</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">22</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">23</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">24</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">25</button>
+                                    
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">26</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">27</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">28</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">29</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">30</button>
+                                    <button class="p-2 hover:bg-primary hover:text-white rounded transition-gentle">31</button>
+                                    <div class="p-2 text-text-secondary">1</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Time Slots -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-text-primary">Available Times</h3>
+                            <p class="text-sm text-text-secondary">Wednesday, January 15, 2025</p>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="text-sm font-medium text-text-primary mb-2">Morning</h4>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            9:00 AM
+                                        </button>
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            9:30 AM
+                                        </button>
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            10:00 AM
+                                        </button>
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            11:00 AM
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-text-primary mb-2">Afternoon</h4>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            1:00 PM
+                                        </button>
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            2:00 PM
+                                        </button>
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            3:00 PM
+                                        </button>
+                                        <button class="time-slot p-3 text-sm border border-surface rounded-lg hover:border-primary hover:bg-primary-50 transition-gentle">
+                                            4:00 PM
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button id="back-step-2" class="btn-secondary">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back to Service
+                        </button>
+                        <button id="next-step-2" class="btn-accent" disabled>
+                            Continue to Patient Info
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Patient Information -->
+                <div id="step-3" class="card-floating space-y-6 hidden">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl font-bold text-primary mb-2">Patient Information</h2>
+                        <p class="text-text-secondary">Complete your details to confirm the appointment</p>
+                    </div>
+
+                    <form class="space-y-6">
+                        <!-- Patient Type -->
+                        <div class="space-y-3">
+                            <h3 class="text-lg font-semibold text-text-primary">Patient Type</h3>
+                            <div class="flex space-x-4">
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="patient-type" value="new" class="text-primary focus:ring-primary" />
+                                    <span class="text-sm">New Patient</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="patient-type" value="existing" class="text-primary focus:ring-primary" />
+                                    <span class="text-sm">Existing Patient</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Personal Information -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">First Name *</label>
+                                <input type="text" class="input-field" placeholder="Enter your first name" required />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Last Name *</label>
+                                <input type="text" class="input-field" placeholder="Enter your last name" required />
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                                <input type="email" class="input-field" placeholder="your.email@example.com" required />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Phone Number *</label>
+                                <input type="tel" class="input-field" placeholder="(555) 123-4567" required />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Date of Birth *</label>
+                            <input type="date" class="input-field" required />
+                        </div>
+
+                        <!-- Insurance Information -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-text-primary">Insurance Information</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Insurance Provider</label>
+                                    <select class="input-field">
+                                        <option value>Select your insurance</option>
+                                        <option value="aetna">Aetna</option>
+                                        <option value="bcbs">Blue Cross Blue Shield</option>
+                                        <option value="cigna">Cigna</option>
+                                        <option value="delta">Delta Dental</option>
+                                        <option value="metlife">MetLife</option>
+                                        <option value="humana">Humana</option>
+                                        <option value="none">No Insurance</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Member ID</label>
+                                    <input type="text" class="input-field" placeholder="Insurance member ID" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medical History -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-text-primary">Medical History</h3>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Current Medications</label>
+                                <textarea class="input-field" rows="3" placeholder="List any medications you're currently taking"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Allergies</label>
+                                <textarea class="input-field" rows="2" placeholder="List any known allergies"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Preferences -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-text-primary">Appointment Preferences</h3>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Reminder Preferences</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center space-x-2">
+                                        <input type="checkbox" class="text-primary focus:ring-primary" checked />
+                                        <span class="text-sm">Email reminder 24 hours before</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2">
+                                        <input type="checkbox" class="text-primary focus:ring-primary" />
+                                        <span class="text-sm">SMS reminder 2 hours before</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2">
+                                        <input type="checkbox" class="text-primary focus:ring-primary" />
+                                        <span class="text-sm">Phone call reminder</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Requests -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Special Requests or Notes</label>
+                            <textarea class="input-field" rows="3" placeholder="Any special accommodations or notes for your visit"></textarea>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="space-y-3">
+                            <label class="flex items-start space-x-2">
+                                <input type="checkbox" class="text-primary focus:ring-primary mt-1" required />
+                                <span class="text-sm text-text-secondary">I agree to the <a href="javascript:void(0)" class="text-primary hover:underline">Terms of Service</a> and <a href="javascript:void(0)" class="text-primary hover:underline">Privacy Policy</a></span>
+                            </label>
+                            <label class="flex items-start space-x-2">
+                                <input type="checkbox" class="text-primary focus:ring-primary mt-1" required />
+                                <span class="text-sm text-text-secondary">I consent to receive appointment reminders and follow-up communications</span>
+                            </label>
+                        </div>
+                    </form>
+
+                    <div class="flex justify-between">
+                        <button id="back-step-3" class="btn-secondary">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back to Date & Time
+                        </button>
+                        <button id="confirm-appointment" class="btn-accent">
+                            Confirm Appointment
+                            <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Verification -->
+    <section class="py-12 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl font-bold text-primary mb-4">Insurance Verification</h2>
+                <p class="text-text-secondary mb-8">
+                    We work with most major insurance providers to maximize your benefits and minimize out-of-pocket costs.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card text-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">Real-time Verification</h3>
+                        <p class="text-sm text-text-secondary">Instant insurance benefit verification during booking</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">Maximum Benefits</h3>
+                        <p class="text-sm text-text-secondary">We help you use your insurance benefits effectively</p>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="w-12 h-12 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">Flexible Payment</h3>
+                        <p class="text-sm text-text-secondary">Multiple payment options and financing available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">DentalCare Pro</h3>
+                            <p class="text-sm text-primary-200">Advanced Care, Personal Touch</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Providing exceptional dental care with modern technology and compassionate service since 2010.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-primary-200 hover:text-white transition-gentle">Home</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Services</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-gentle">About</a></li>
+                        <li><a href="book_appointment.html" class="text-primary-200 hover:text-white transition-gentle">Book Appointment</a></li>
+                        <li><a href="patient_portal.html" class="text-primary-200 hover:text-white transition-gentle">Patient Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">General Dentistry</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Cosmetic Procedures</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Oral Surgery</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Emergency Care</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Preventive Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-primary-200">123 Dental Street, City, ST 12345</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <a href="tel:+1-555-DENTAL" class="text-primary-200 hover:text-white transition-gentle">(555) DENTAL-1</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <a href="mailto:info@dentalcarepro.com" class="text-primary-200 hover:text-white transition-gentle">info@dentalcarepro.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-600 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 DentalCare Pro. All Rights Reserved. | HIPAA Compliant | Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Step navigation
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // Step 1 validation
+        function validateStep1() {
+            const appointmentType = document.querySelector('input[name="appointment-type"]:checked');
+            const doctor = document.querySelector('input[name="doctor"]:checked');
+            const nextBtn = document.getElementById('next-step-1');
+            
+            if (appointmentType && doctor) {
+                nextBtn.disabled = false;
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                nextBtn.disabled = true;
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // Step 2 validation
+        function validateStep2() {
+            const selectedTime = document.querySelector('.time-slot.selected');
+            const nextBtn = document.getElementById('next-step-2');
+            
+            if (selectedTime) {
+                nextBtn.disabled = false;
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                nextBtn.disabled = true;
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // Appointment type selection
+        document.querySelectorAll('input[name="appointment-type"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.appointment-type-card .card').forEach(card => {
+                    card.classList.remove('border-primary', 'bg-primary-50');
+                    card.classList.add('border-transparent');
+                });
+                
+                if (this.checked) {
+                    const card = this.closest('.appointment-type-card').querySelector('.card');
+                    card.classList.add('border-primary', 'bg-primary-50');
+                    card.classList.remove('border-transparent');
+                }
+                
+                validateStep1();
+            });
+        });
+
+        // Doctor selection
+        document.querySelectorAll('input[name="doctor"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.doctor-card .card').forEach(card => {
+                    card.classList.remove('border-primary', 'bg-primary-50');
+                    card.classList.add('border-transparent');
+                });
+                
+                if (this.checked) {
+                    const card = this.closest('.doctor-card').querySelector('.card');
+                    card.classList.add('border-primary', 'bg-primary-50');
+                    card.classList.remove('border-transparent');
+                }
+                
+                validateStep1();
+            });
+        });
+
+        // Time slot selection
+        document.querySelectorAll('.time-slot').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(btn => {
+                    btn.classList.remove('selected', 'border-primary', 'bg-primary', 'text-white');
+                    btn.classList.add('border-surface');
+                });
+                
+                this.classList.add('selected', 'border-primary', 'bg-primary', 'text-white');
+                this.classList.remove('border-surface');
+                
+                validateStep2();
+            });
+        });
+
+        // Step navigation buttons
+        document.getElementById('next-step-1').addEventListener('click', function() {
+            if (!this.disabled) {
+                showStep(2);
+            }
+        });
+
+        document.getElementById('back-step-2').addEventListener('click', function() {
+            showStep(1);
+        });
+
+        document.getElementById('next-step-2').addEventListener('click', function() {
+            if (!this.disabled) {
+                showStep(3);
+            }
+        });
+
+        document.getElementById('back-step-3').addEventListener('click', function() {
+            showStep(2);
+        });
+
+        // Show specific step
+        function showStep(step) {
+            // Hide all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                document.getElementById(`step-${i}`).classList.add('hidden');
+            }
+            
+            // Show current step
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            
+            // Update step indicators
+            updateStepIndicators(step);
+            
+            currentStep = step;
+        }
+
+        // Update step indicators
+        function updateStepIndicators(activeStep) {
+            for (let i = 1; i <= totalSteps; i++) {
+                const indicator = document.querySelector(`.flex:nth-child(${i * 2 - 1}) .w-8`);
+                const text = document.querySelector(`.flex:nth-child(${i * 2 - 1}) span`);
+                
+                if (i <= activeStep) {
+                    indicator.classList.remove('bg-surface', 'text-text-secondary');
+                    indicator.classList.add('bg-primary', 'text-white');
+                    text.classList.remove('text-text-secondary');
+                    text.classList.add('text-primary', 'font-medium');
+                } else {
+                    indicator.classList.remove('bg-primary', 'text-white');
+                    indicator.classList.add('bg-surface', 'text-text-secondary');
+                    text.classList.remove('text-primary', 'font-medium');
+                    text.classList.add('text-text-secondary');
+                }
+            }
+        }
+
+        // Confirm appointment
+        document.getElementById('confirm-appointment').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Appointment confirmed! You will receive a confirmation email shortly with pre-visit instructions and parking information.');
+            
+            // Redirect to patient portal or homepage
+            window.location.href = 'patient_portal.html';
+        });
+
+        // Initialize
+        validateStep1();
+        validateStep2();
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DentalCare Pro - Advanced Care, Personal Touch</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdentalcare1896back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Emergency Care Banner -->
+    <div id="emergency-banner" class="bg-error text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-center gap-4">
+            <span>🚨 Dental Emergency? Call us now:</span>
+            <a href="tel:+1-555-DENTAL" class="font-bold underline hover:no-underline">(555) DENTAL-1</a>
+            <button onclick="document.getElementById('emergency-banner').style.display='none'" class="ml-4 text-white hover:text-gray-200">
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-gentle sticky top-8 z-40">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">DentalCare Pro</h1>
+                        <p class="text-xs text-text-secondary">Advanced Care, Personal Touch</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-primary font-semibold">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="btn-accent">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-surface">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="homepage.html" class="text-primary font-semibold">Home</a>
+                    <a href="services.html" class="text-text-secondary hover:text-primary transition-gentle">Services</a>
+                    <a href="about.html" class="text-text-secondary hover:text-primary transition-gentle">About</a>
+                    <a href="book_appointment.html" class="btn-accent inline-block text-center">Book Appointment</a>
+                    <a href="patient_portal.html" class="text-text-secondary hover:text-primary transition-gentle">Patient Portal</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 py-16 lg:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-4xl lg:text-hero font-bold text-primary leading-tight">
+                            Advanced Care,<br />
+                            <span class="text-gradient-primary">Personal Touch</span>
+                        </h1>
+                        <p class="text-lg text-text-secondary leading-relaxed">
+                            Experience modern dentistry in a warm, welcoming environment. Our expert team combines cutting-edge technology with compassionate care to give you the healthy, confident smile you deserve.
+                        </p>
+                    </div>
+
+                    <!-- Trust Signals -->
+                    <div class="flex flex-wrap items-center gap-6">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-medium text-text-secondary">HIPAA Compliant</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-medium text-text-secondary">15+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-success rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-medium text-text-secondary">Most Insurance Accepted</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="book_appointment.html" class="btn-accent text-center">
+                            Book Appointment Now
+                        </a>
+                        <a href="tel:+1-555-DENTAL" class="btn-secondary text-center">
+                            Call (555) DENTAL-1
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-2xl shadow-floating">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Modern dental office with natural lighting" class="w-full h-96 lg:h-[500px] object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                    </div>
+                    <!-- Floating Stats -->
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-floating">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">2,500+</div>
+                            <div class="text-sm text-text-secondary">Happy Patients</div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-floating">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent">4.9★</div>
+                            <div class="text-sm text-text-secondary">Patient Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Appointment Booking Widget -->
+    <section class="bg-white py-12 shadow-gentle">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-primary mb-2">Book Your Appointment</h2>
+                    <p class="text-text-secondary">Choose your preferred time slot - we'll confirm within minutes</p>
+                </div>
+
+                <div class="card-floating">
+                    <form class="grid md:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Service</label>
+                            <select class="input-field">
+                                <option>General Checkup</option>
+                                <option>Teeth Cleaning</option>
+                                <option>Cosmetic Consultation</option>
+                                <option>Emergency Care</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Date</label>
+                            <input type="date" class="input-field" min="2025-01-01" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Time</label>
+                            <select class="input-field">
+                                <option>9:00 AM</option>
+                                <option>10:30 AM</option>
+                                <option>2:00 PM</option>
+                                <option>3:30 PM</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button type="submit" class="btn-accent w-full">
+                                Book Now
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Our Dental Services</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Comprehensive dental care tailored to your needs, from routine cleanings to advanced cosmetic procedures
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- General Dentistry -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="text-center space-y-4">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">General Dentistry</h3>
+                        <p class="text-text-secondary">
+                            Comprehensive oral health care including cleanings, fillings, and preventive treatments to keep your smile healthy.
+                        </p>
+                        <a href="services.html" class="inline-flex items-center text-primary font-medium hover:text-primary-700 transition-gentle">
+                            Learn More
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cosmetic Procedures -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="text-center space-y-4">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto">
+                            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Cosmetic Procedures</h3>
+                        <p class="text-text-secondary">
+                            Transform your smile with whitening, veneers, and other cosmetic treatments designed to boost your confidence.
+                        </p>
+                        <a href="services.html" class="inline-flex items-center text-primary font-medium hover:text-primary-700 transition-gentle">
+                            Learn More
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Emergency Care -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="text-center space-y-4">
+                        <div class="w-16 h-16 bg-error-100 rounded-full flex items-center justify-center mx-auto">
+                            <svg class="w-8 h-8 text-error" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary">Emergency Care</h3>
+                        <p class="text-text-secondary">
+                            Immediate dental care when you need it most. We're here for urgent dental situations and pain relief.
+                        </p>
+                        <a href="tel:+1-555-DENTAL" class="inline-flex items-center text-error font-medium hover:text-error-600 transition-gentle">
+                            Call Now
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your Dental Team -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Meet Your Dental Team</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Our experienced professionals are dedicated to providing you with the highest quality dental care in a comfortable environment
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dr. Sarah Johnson -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="space-y-4">
+                        <div class="relative mx-auto w-32 h-32 overflow-hidden rounded-full">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Sarah Johnson" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">Dr. Sarah Johnson</h3>
+                            <p class="text-accent font-medium">Lead Dentist & Practice Owner</p>
+                            <p class="text-sm text-text-secondary mt-2">DDS, University of Pennsylvania</p>
+                        </div>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            15+ years of experience in general and cosmetic dentistry. Specializes in patient comfort and advanced dental techniques.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="px-2 py-1 bg-primary-100 text-primary text-xs rounded-full">General Dentistry</span>
+                            <span class="px-2 py-1 bg-accent-100 text-accent text-xs rounded-full">Cosmetic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Michael Chen -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="space-y-4">
+                        <div class="relative mx-auto w-32 h-32 overflow-hidden rounded-full">
+                            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Michael Chen" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2021/07/14/17/32/doctor-6466701_1280.jpg'; this.onerror=null;" />
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">Dr. Michael Chen</h3>
+                            <p class="text-accent font-medium">Oral Surgeon</p>
+                            <p class="text-sm text-text-secondary mt-2">DDS, Harvard School of Dental Medicine</p>
+                        </div>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            Specializes in oral surgery and complex dental procedures. Known for gentle technique and patient education.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="px-2 py-1 bg-primary-100 text-primary text-xs rounded-full">Oral Surgery</span>
+                            <span class="px-2 py-1 bg-secondary-100 text-secondary text-xs rounded-full">Implants</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lisa Rodriguez -->
+                <div class="card text-center hover:shadow-floating transition-gentle">
+                    <div class="space-y-4">
+                        <div class="relative mx-auto w-32 h-32 overflow-hidden rounded-full">
+                            <img src="https://images.unsplash.com/photo-1594824475317-8b7b0c8c3b7b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Lisa Rodriguez" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">Lisa Rodriguez</h3>
+                            <p class="text-accent font-medium">Senior Dental Hygienist</p>
+                            <p class="text-sm text-text-secondary mt-2">RDH, Certified in Local Anesthesia</p>
+                        </div>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            10+ years of experience in preventive care and patient education. Passionate about helping patients maintain optimal oral health.
+                        </p>
+                        <div class="flex justify-center space-x-2">
+                            <span class="px-2 py-1 bg-success-100 text-success text-xs rounded-full">Preventive Care</span>
+                            <span class="px-2 py-1 bg-primary-100 text-primary text-xs rounded-full">Cleanings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="about.html" class="btn-secondary">Meet Our Full Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Testimonials -->
+    <section class="py-16 bg-surface">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">What Our Patients Say</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Real experiences from real patients who trust us with their dental care
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-text-secondary italic">
+                            "Dr. Johnson and her team made my dental anxiety disappear. The office is so welcoming and the care is exceptional. I actually look forward to my appointments now!"
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-semibold text-sm">EM</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-text-primary">Emily Martinez</p>
+                                <p class="text-sm text-text-secondary">Patient since 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-text-secondary italic">
+                            "The online booking system is so convenient! I can schedule my family's appointments anytime. The staff is professional and the technology is impressive."
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-semibold text-sm">DT</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-text-primary">David Thompson</p>
+                                <p class="text-sm text-text-secondary">Patient since 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card hover:shadow-floating transition-gentle">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-1">
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-text-secondary italic">
+                            "My smile transformation exceeded all expectations! Dr. Johnson explained every step and the results are amazing. I can't stop smiling now!"
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary font-semibold text-sm">AS</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-text-primary">Amanda Smith</p>
+                                <p class="text-sm text-text-secondary">Patient since 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Partners -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-2">Insurance Partners</h2>
+                <p class="text-text-secondary">We work with most major insurance providers</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div class="bg-gray-100 px-6 py-3 rounded-lg">
+                    <span class="font-semibold text-gray-600">Aetna</span>
+                </div>
+                <div class="bg-gray-100 px-6 py-3 rounded-lg">
+                    <span class="font-semibold text-gray-600">Blue Cross Blue Shield</span>
+                </div>
+                <div class="bg-gray-100 px-6 py-3 rounded-lg">
+                    <span class="font-semibold text-gray-600">Cigna</span>
+                </div>
+                <div class="bg-gray-100 px-6 py-3 rounded-lg">
+                    <span class="font-semibold text-gray-600">Delta Dental</span>
+                </div>
+                <div class="bg-gray-100 px-6 py-3 rounded-lg">
+                    <span class="font-semibold text-gray-600">MetLife</span>
+                </div>
+                <div class="bg-gray-100 px-6 py-3 rounded-lg">
+                    <span class="font-semibold text-gray-600">Humana</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">DentalCare Pro</h3>
+                            <p class="text-sm text-primary-200">Advanced Care, Personal Touch</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Providing exceptional dental care with modern technology and compassionate service since 2010.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-primary-200 hover:text-white transition-gentle">Home</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Services</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-gentle">About</a></li>
+                        <li><a href="book_appointment.html" class="text-primary-200 hover:text-white transition-gentle">Book Appointment</a></li>
+                        <li><a href="patient_portal.html" class="text-primary-200 hover:text-white transition-gentle">Patient Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">General Dentistry</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Cosmetic Procedures</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Oral Surgery</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Emergency Care</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-gentle">Preventive Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-primary-200">123 Dental Street, City, ST 12345</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <a href="tel:+1-555-DENTAL" class="text-primary-200 hover:text-white transition-gentle">(555) DENTAL-1</a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-200" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <a href="mailto:info@dentalcarepro.com" class="text-primary-200 hover:text-white transition-gentle">info@dentalcarepro.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-600 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 DentalCare Pro. All Rights Reserved. | HIPAA Compliant | Privacy Policy
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Appointment request submitted! We will confirm your appointment within 15 minutes.');
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
